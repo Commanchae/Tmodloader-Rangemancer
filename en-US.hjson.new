@@ -1,0 +1,54 @@
+
+Mods: {
+	Bowmancer: {
+		Buffs: {
+			BeeBowSummonBuff: {
+				DisplayName: The Bee's Knees
+				Description: The Bee's Knees will fight for you!
+			}
+
+			GoldBowSummonBuff: {
+				DisplayName: Gold Bow
+				Description: This gold bow will fight for you!
+			}
+
+			MoltenFurySummonBuff: {
+				DisplayName: Molten Fury
+				Description: This molten fury will fight for you!
+			}
+
+			TemplateBuff: {
+				DisplayName: Mods.Bowmancer.BuffName.TemplateBuff
+				Description: Mods.Bowmancer.BuffDescription.TemplateBuff
+			}
+
+			TendonBowSummonBuff: {
+				DisplayName: Tendon Bow
+				Description: This tendon bow will fight for you!
+			}
+
+			WoodenBowSummonBuff: {
+				DisplayName: Wooden Bow
+				Description: This wooden bow will fight for you!
+			}
+		}
+
+		Items: {
+			BeeBowSummon.DisplayName: Bee Bow Summon
+			GoldBowSummon.DisplayName: Gold Bow Summon
+			MoltenFurySummon.DisplayName: Molten Fury Summon
+			Template.DisplayName: Template
+			TendonBowSummon.DisplayName: Tendon Bow Summon
+			WoodenBowSummon.DisplayName: Wooden Bow Summon
+		}
+
+		Projectiles: {
+			BeeBowSummonProjectile.DisplayName: Bee Bow Summon Projectile
+			GoldBowSummonProjectile.DisplayName: Gold Bow Summon Projectile
+			MoltenFurySummonProjectile.DisplayName: Molten Fury Summon Projectile
+			TemplateProjectile.DisplayName: Template Projectile
+			TendonBowSummonProjectile.DisplayName: Tendon Bow Summon Projectile
+			WoodenBowSummonProjectile.DisplayName: Wooden Bow Summon Projectile
+		}
+	}
+}
