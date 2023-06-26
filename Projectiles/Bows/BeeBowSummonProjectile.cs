@@ -13,7 +13,7 @@ using System.Collections.Specialized;
 
 namespace Bowmancer.Projectiles.Bows
 {
-    public class BeeBowSummonProjectile : SummonProjectile
+    public class BeeBowSummonProjectile : NewSummonProjectile
     {
         public override void setAttributes()
         {

@@ -27,6 +27,7 @@ namespace Bowmancer.Projectiles
         protected float searchDistance = 500f;
         protected Random rand = new Random();
         protected float percentNonConsume = 0f;
+        protected bool shootFromCenter = false; // true for bows, shoots from the strings instead of the chamber.
 
         public override void SetStaticDefaults()
 
@@ -246,17 +247,18 @@ namespace Bowmancer.Projectiles
 
                 Vector2 initialPosition = Projectile.Center;
 
-                Vector2 direction = targetCenter - initialPosition;
-                float theta = (float)Math.Atan((double)direction.Y / (double)direction.X);
-                Projectile.rotation = theta;
-                bool directlyAboveorBelow = false;
+
+
                 if ((targetCenter - Projectile.Center).X > 0f)
                 {
                     Projectile.spriteDirection = Projectile.direction = 1;
-                    initialPosition.X += (Projectile.width/2f);
-                    if ((targetCenter.X - initialPosition.X) <= 0f)
+                    if (!shootFromCenter)
                     {
-                        initialPosition.X -= (Projectile.width / 2f);
+                        initialPosition.X += (Projectile.width / 2f);
+                        if ((targetCenter.X - initialPosition.X) <= 0f)
+                        {
+                            initialPosition.X -= (Projectile.width / 2f);
+                        }
                     }
 
                 }
@@ -264,14 +266,19 @@ namespace Bowmancer.Projectiles
 
                 {
                     Projectile.spriteDirection = Projectile.direction = -1;
-                    initialPosition.X -= (Projectile.width/2f);
-                    if ((targetCenter.X - initialPosition.X) < 0f)
+                    if (!shootFromCenter)
                     {
-                        initialPosition.X += (Projectile.width / 2f);
+                        initialPosition.X -= (Projectile.width / 2f);
+                        if ((targetCenter.X - initialPosition.X) < 0f)
+                        {
+                            initialPosition.X += (Projectile.width / 2f);
+                        }
                     }
                 }
+                Vector2 direction = targetCenter - initialPosition;
+                float theta = (float)Math.Atan((double)direction.Y / (double)direction.X);
+                Projectile.rotation = theta;
 
-                direction = targetCenter - initialPosition;
                 theta = (float)Math.Atan((double)direction.Y / (double)direction.X);
 
                 initialPosition -= Projectile.Center;

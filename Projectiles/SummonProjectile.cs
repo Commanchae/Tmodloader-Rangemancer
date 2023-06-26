@@ -26,13 +26,20 @@ namespace Bowmancer.Projectiles
         protected float minionSlots = 1f;
         protected int shootCooldown = 24;
         protected int shootCounter = 0;
-        protected Item bowDefault = new Item();
         protected int specialShotCooldown = 3;
         protected int specialShotCounter = 0;
-        protected float angleOffset = 0f;
         protected float searchDistance = 600f;
 
+        protected bool isGun = false;
+        protected bool useCustomAmmo = false;
+        protected Item respectiveItem = new Item();
+        protected List<Item> notProjectileMotion = new List<Item> {new Item(ItemID.JestersArrow)};
+        protected Random rand = new Random();
+        protected float percentNonConsume = 0f;
+        protected bool shootFromCenter = false; // true for bows, shoots from the strings instead of the chamber.
+
         private int tickTest = 0;
+
 
         public override void SetStaticDefaults()
 
@@ -49,8 +56,6 @@ namespace Bowmancer.Projectiles
             ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true; // Make the cultist resistant to this projectile, as it's resistant to all homing projectiles.
         }
 
-        public abstract void setAttributes();
-
         public sealed override void SetDefaults()
         {
             setAttributes();
@@ -66,7 +71,6 @@ namespace Bowmancer.Projectiles
             Projectile.minionSlots = minionSlots; // Amount of slots this minion occupies from the total minion slots available to the player (more on that later)
             Projectile.penetrate = -1; // Needed so the minion doesn't despawn on collision with enemies or tiles
 
-            bowDefault.DefaultToBow(1, 1);
 
         }
 
@@ -251,94 +255,41 @@ namespace Bowmancer.Projectiles
                 vectorToIdlePosition *= speed;
                 Projectile.velocity = (Projectile.velocity * (inertia - 1) + vectorToIdlePosition) / inertia;
                 Vector2 direction = (targetCenter - Projectile.Center);
+                Vector2 initialPosition = Projectile.Center;
 
-                // Makes the projectile face towards the target.
-                if ((targetCenter - Projectile.Center).X > 0f)
+                // Calculates initial position.
+                // The projectile will either shoot at the chamber of the gun or from the center.
+                if (direction.X > 0f)
                 {
                     Projectile.spriteDirection = Projectile.direction = 1;
+                    if (!shootFromCenter)
+                    {
+                        initialPosition.X += (Projectile.width / 2f);
+                        if (direction.X <= 0f)
+                        {
+                            initialPosition.X -= (Projectile.width / 2f);
+                        }
+                    }
+
                 }
-                else if ((targetCenter - Projectile.Center).X < 0f)
+                else if (direction.X < 0f)
+
                 {
                     Projectile.spriteDirection = Projectile.direction = -1;
+                    initialPosition.X -= (Projectile.width / 2f);
+                    if ((targetCenter.X - initialPosition.X) < 0f)
+                    {
+                        initialPosition.X += (Projectile.width / 2f);
+                    }
                 }
+
 
                 if (shootCounter >= shootCooldown)
                 {
                     shootCounter = 0;
                     if (Main.myPlayer == Projectile.owner)
                     {
-
-                        Item chosenAmmo = Main.player[Projectile.owner].ChooseAmmo(bowDefault);
-
-                        if (chosenAmmo != null)
-                        {
-                            if (chosenAmmo.type != 51)
-                            {
-                                Vector2 velocity;
-                                float v_ = (shootSpeed + chosenAmmo.shootSpeed);
-                                Vector2 displacement = direction;
-
-                                float closest_dist = 99999999f;
-                                float best_theta = 0f;
-                                int i = 0;
-                                while (i < 20)
-                                {
-                                    float theta = (float)Math.Atan2(-1 * displacement.Y, displacement.X);
-                                    if (theta < 0f)
-                                    {
-                                        theta -= (-Projectile.direction) * 0.05f * i;
-                                    }
-                                    else
-                                    {
-                                        theta -= (-Projectile.direction) * 0.05f * i;
-                                    }
-                                    Vector2 velocity_ = new Vector2(v_ * MathF.Cos(theta), -1 * v_ * MathF.Sin(theta));
-                                    float gravity = 12f * (16f / 3600f);
-
-                                    float time = displacement.X / (velocity_.X);
-
-                                    float s_y = (velocity_.Y * time + (0.5f * gravity * time * time));
-
-                                    Vector2 finalPosition = new Vector2(displacement.X, s_y);
-                                    finalPosition = Projectile.Center + finalPosition;
-
-                                    float abs_dist = Math.Abs(s_y - displacement.Y);
-                                    if (abs_dist < closest_dist)
-                                    {
-                                        closest_dist = abs_dist;
-                                        best_theta = theta;
-                                    }
-                                    else
-                                    {
-                                        i += 20;
-                                    }
-                                    i++;
-                                }
-
-                                if (Projectile.direction == 1)
-                                {
-                                    Projectile.rotation = -best_theta;
-
-                                }
-                                else
-                                {
-                                    Projectile.rotation = (float)(Math.PI - best_theta);
-                                }
-                                velocity = new Vector2(v_ * MathF.Cos(best_theta), -1 * v_ * MathF.Sin(best_theta));
-
-                                angleOffset = 0;
-                                handleShot(chosenAmmo, Projectile.Center, velocity, angleOffset, targetCenter);
-                            }
-                            else
-                            {
-                                float v_ = (shootSpeed + chosenAmmo.shootSpeed);
-                                direction.Normalize();
-                                direction *= v_;
-                                angleOffset = 0;
-                                handleShot(chosenAmmo, Projectile.Center, direction, angleOffset, targetCenter);
-                            }
-
-                        }
+                        handleShot(initialPosition, direction);
                     }
                     }
 
@@ -379,8 +330,6 @@ namespace Bowmancer.Projectiles
             }
         }
 
-        protected abstract void handleShot(Item chosenAmmo, Vector2 position, Vector2 shootVel, float angleOffset, Vector2 targetCenter);
-
         private void Visuals(bool foundTarget)
         {
             // So it will lean slightly towards the direction it's moving
@@ -406,6 +355,162 @@ namespace Bowmancer.Projectiles
 
             // Some visuals here
             Lighting.AddLight(Projectile.Center, Color.White.ToVector3() * 0.78f);
+        }
+
+
+        public abstract void setAttributes();
+        protected abstract void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel);
+
+        private Item chooseAmmo()
+        {
+            Item chosenAmmo = null;
+            if (useCustomAmmo)
+            {
+                // Check inventory for Item.
+                for (int i = 0; i < Main.player[Projectile.owner].inventory.Length; i++)
+                {
+                    Item currentItem = Main.player[Projectile.owner].inventory[i];
+                    if (currentItem.Name.Equals(respectiveItem.Name))
+                    {
+                        chosenAmmo = currentItem;
+                    }
+                }
+            }
+            else
+            {
+                // Else, check what ammo the Item uses.
+                chosenAmmo = Main.player[Projectile.owner].ChooseAmmo(respectiveItem);
+            }
+            return chosenAmmo;
+        }
+
+        private Vector2 calculateVelocity(float shootSpeed, Vector2 displacement, bool isProjectileMotion)
+        {
+            // Check if ammo is projectile motion.
+            // If isGun evalutes to true, the motion is straight and not projectile.
+            Vector2 returnVelocity;
+            if (isProjectileMotion)
+            {
+                float closest_dist = 99999999f;
+                float best_theta = 0f;
+                int i = 0;
+                while (i < 20)
+                {
+                    float theta = (float)Math.Atan2(-1 * displacement.Y, displacement.X);
+                    if (theta < 0f)
+                    {
+                        theta -= (-Projectile.direction) * 0.05f * i;
+                    }
+                    else
+                    {
+                        theta -= (-Projectile.direction) * 0.05f * i;
+                    }
+                    Vector2 velocity_ = new Vector2(shootSpeed * MathF.Cos(theta), -1 * shootSpeed * MathF.Sin(theta));
+                    float gravity = 13f * (16f / 3600f);
+
+                    float time = displacement.X / (velocity_.X);
+
+                    float s_y = (velocity_.Y * time + (0.5f * gravity * time * time));
+
+                    Vector2 finalPosition = new Vector2(displacement.X, s_y);
+                    finalPosition = Projectile.Center + finalPosition;
+
+                    float abs_dist = Math.Abs(s_y - displacement.Y);
+                    if (abs_dist < closest_dist)
+                    {
+                        closest_dist = abs_dist;
+                        best_theta = theta;
+                    }
+                    else
+                    {
+                        i += 20;
+                    }
+                    i++;
+                }
+
+                if (Projectile.direction == 1)
+                {
+                    Projectile.rotation = -best_theta;
+
+                }
+                else
+                {
+                    Projectile.rotation = (float)(Math.PI - best_theta);
+                }
+                returnVelocity = new Vector2(shootSpeed * MathF.Cos(best_theta), -1 * shootSpeed * MathF.Sin(best_theta));
+            }
+            else
+            {
+                Vector2 shootVel = displacement;
+                float theta = (float)Math.Atan((double)displacement.Y / (double)displacement.X);
+                Projectile.rotation = theta;
+                shootVel.Normalize();
+                shootVel *= shootSpeed;
+
+                returnVelocity = shootVel;
+            }
+            return returnVelocity;
+        }
+
+        private void handleShot(Vector2 initialPosition, Vector2 displacement)
+        {
+            Item chosenAmmo = chooseAmmo();
+            bool isProjectileMotion = false;
+
+            if (chosenAmmo != null)
+            {
+                // Check for projectile motion.
+                if (isGun)
+                {
+                    isProjectileMotion = false;
+                }
+                else if (itemNameInItemList(chosenAmmo.Name)){
+                    isProjectileMotion = false;
+                }
+                else
+                {
+                    isProjectileMotion = true;
+                }
+            }
+
+            Vector2 velocity = calculateVelocity(shootSpeed + chosenAmmo.shootSpeed, displacement, isProjectileMotion);
+            shoot(chosenAmmo, initialPosition, velocity);
+            consumeAmmo(chosenAmmo.type);
+            // Consume ammo.
+
+        }
+
+        private bool itemNameInItemList(string itemName)
+        {
+            bool returnVal = false;
+
+            foreach (Item item in notProjectileMotion)
+            {
+                if (itemName.Equals(item.Name))
+                {
+                    returnVal = true;
+                }
+            }
+
+
+            return returnVal;
+        }
+
+        protected void consumeAmmo(int ammoType)
+        {
+            int number = rand.Next(1, 101);
+
+            // Implement ammo conservation. 
+
+
+            if (number >= (int)101 * percentNonConsume)
+            {
+                // weaponType: 0 for Bows, 1 for Guns.
+                if (ammoType != 3103 && ammoType != 3104)
+                {
+                    Main.player[Projectile.owner].ConsumeItem(ammoType);
+                }
+            }
         }
     }
 }

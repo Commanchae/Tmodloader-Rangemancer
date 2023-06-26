@@ -15,7 +15,7 @@ using IL.Terraria.Audio;
 using Bowmancer.Items.Bows;
 namespace Bowmancer.Projectiles.Bows
 {
-    public class WoodenBowSummonProjectile : SummonProjectile
+    public class WoodenBowSummonProjectile : NewSummonProjectile
     {
         public override void setAttributes()
         {

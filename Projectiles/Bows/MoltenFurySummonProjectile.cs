@@ -14,7 +14,7 @@ using Bowmancer.Items.Bows;
 
 namespace Bowmancer.Projectiles.Bows
 {
-    public class MoltenFurySummonProjectile : SummonProjectile
+    public class MoltenFurySummonProjectile : NewSummonProjectile
     {
         public override void setAttributes()
         {

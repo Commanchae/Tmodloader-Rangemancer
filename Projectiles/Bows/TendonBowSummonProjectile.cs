@@ -14,7 +14,7 @@ using Bowmancer.Items.Bows;
 
 namespace Bowmancer.Projectiles.Bows
 {
-    public class TendonBowSummonProjectile : SummonProjectile
+    public class TendonBowSummonProjectile : NewSummonProjectile
     {
         public override void setAttributes()
         {

@@ -9,7 +9,7 @@ using Bowmancer.Items.Bows;
 
 namespace Bowmancer.Projectiles.Bows
 {
-    public class GoldBowSummonProjectile : SummonProjectile
+    public class GoldBowSummonProjectile : NewSummonProjectile
     {
         public override void setAttributes()
         {

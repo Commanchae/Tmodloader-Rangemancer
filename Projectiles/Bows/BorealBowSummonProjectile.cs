@@ -15,7 +15,7 @@ using Bowmancer.Items.Bows;
 
 namespace Bowmancer.Projectiles.Bows
 {
-    public class BorealBowSummonProjectile : SummonProjectile
+    public class BorealBowSummonProjectile : NewSummonProjectile
     {
         public override void setAttributes()
         {
