@@ -15,17 +15,16 @@ using System.Drawing.Text;
 
 namespace Bowmancer.Projectiles
 {
-    public abstract class ShotGunProjectile : GunSummonProjectile
+    public abstract class ShotGunProjectile : SummonProjectile
     {
         protected string itemName;
         protected float spreadCount;
         protected float spreadShotMultiplier = 1f;
         protected int degreesSpread = 30;
         protected int specialSpread = 60;
-
         protected int dustID = DustID.Torch;
 
-        protected override void handleShot(Item chosenAmmo, Vector2 position, Vector2 shootVel, float angleOffset, Vector2 targetCenter)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
 
@@ -37,17 +36,17 @@ namespace Bowmancer.Projectiles
                 if (specialShotCounter >= specialShotCooldown)
                 {
                     specialShotMultiplier = spreadShotMultiplier;
+                    Terraria.Audio.SoundEngine.PlaySound(specialSound);
                     degreesShotSpread = specialSpread;
                     specialShotCounter = 0;
 
                 }
                 for (int i = 0; i < spreadCount * specialShotMultiplier; i++)
                 {
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(degreesShotSpread)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(specialSpread)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
 
                 }
-                Terraria.Audio.SoundEngine.PlaySound(SoundID.Item36);
-                consumeAmmo(chosenAmmo.type);
+                Terraria.Audio.SoundEngine.PlaySound(shootSound);
             }
             else
             {
@@ -57,6 +56,7 @@ namespace Bowmancer.Projectiles
                     Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(degreesSpread)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
 
                 }
+                Terraria.Audio.SoundEngine.PlaySound(shootSound);
             }
         }
 

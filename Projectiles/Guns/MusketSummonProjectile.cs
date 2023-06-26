@@ -27,6 +27,15 @@ namespace Bowmancer.Projectiles.Guns
             Projectile.width = 56;
             Projectile.height = 18;
             searchDistance = 700f;
+
+            // New Essentials
+            isGun = true;
+            shootFromCenter = false;
+            useCustomAmmo = false;
+            respectiveItem = new Item(ItemID.Musket);
+
+            shootSound = SoundID.Item11;
+            specialSound = SoundID.Item40;
         }
     }
 }

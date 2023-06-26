@@ -15,7 +15,7 @@ using Bowmancer.Items.Bows;
 
 namespace Bowmancer.Projectiles.Misc
 {
-    public class SnowballCannonSummonProjectile : MiscSummonProjectile
+    public class SnowballCannonSummonProjectile : MultishotGunProjectile
     {
         public override void setAttributes()
         {
@@ -23,30 +23,17 @@ namespace Bowmancer.Projectiles.Misc
             shootSpeed = 11f;
             shootCooldown = 19;
             specialShotCooldown = 5;
-            itemDefault = new Item(ItemID.SnowballCannon);
+            respectiveItem = new Item(ItemID.SnowballCannon);
+            itemName = "Snowball Cannon Summon";
             Projectile.width = 50;
             Projectile.height = 26;
-            searchDistance = 700f;
-        }
 
-        protected override void handleShot(Item chosenAmmo, Vector2 position, Vector2 shootVel, float angleOffset, Vector2 targetCenter)
-        {
-            Item heldItem = Main.player[Projectile.owner].HeldItem;
+            nextXShots = 1;
+            spreadCount = 3;
 
-            if (heldItem.ModItem is SnowballCannonSummon)
-            {
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotateRandom(MathHelper.ToRadians(5)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-
-            }
-            else
-            {
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotateRandom(MathHelper.ToRadians(5)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-
-                specialShotCounter = 0;
-            }
-            Main.player[Projectile.owner].ConsumeItem(chosenAmmo.type);
-
-
+            isGun = true;
+            shootFromCenter = false;
+            useCustomAmmo = false;
         }
     }
 }

@@ -15,50 +15,38 @@ using Bowmancer.Items.Bows;
 
 namespace Bowmancer.Projectiles.Bows
 {
-    public class BorealBowSummonProjectile : SummonProjectile
+    public class BorealBowSummonProjectile : AdditionalProjectileProjectile
     {
         public override void setAttributes()
         {
+            // Essential
+            Projectile.width = 16;
+            Projectile.height = 32;
+
+            // Class Specific.
             buff = ModContent.BuffType<BorealBowSummonBuff>();
             shootSpeed = 6.6f;
-            shootCooldown = 29;
-        }
+            shootCooldown = 30;
 
-        protected override void handleShot(Item chosenAmmo, Vector2 position, Vector2 shootVel, float angleOffset, Vector2 targetCenter)
-        {
-            Item heldItem = Main.player[Projectile.owner].HeldItem;
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-            Terraria.Audio.SoundEngine.PlaySound(SoundID.Item5);
-            if (heldItem.ModItem is BorealBowSummon)
-            {
-                specialShotCounter++;
+            // Bow Specific.
+            shootFromCenter = true;
+            shootSound = SoundID.Item5;
+            specialSound = SoundID.Item5;
 
-                if (specialShotCounter >= specialShotCooldown)
-                {
+            specialShotCooldown = 3;
+            itemName = "Boreal Bow Summon";
+            respectiveItem = new Item(ItemID.BorealWoodBow);
+            specialAmmoID = ProjectileID.SnowBallFriendly;
+            dustID = DustID.Snow;
+            noOfAdditionalProjectiles = 3;
+            specialShotSpread = 30;
+            specialProjectileSpeedMultiplier = 1f;
 
-                    for (int i = 0; i < 3; i++)
-                    {
-                        Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Snow, Scale: 1.2f);
 
-                    }
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, Projectile.height / 2), Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset + 0.2f)), ProjectileID.SnowBallFriendly, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, Projectile.height / 2), Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset - 0.2f)), ProjectileID.SnowBallFriendly, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-                    Terraria.Audio.SoundEngine.PlaySound(SoundID.Item5);
-                    specialShotCounter = 0;
-                }
-            }
-            else
-            {
-                specialShotCounter = 0;
-            }
-            {
-            }
 
-            // Does not consume ammo if EndlessQuiver is used.
-            if (chosenAmmo.type != 3103)
-            {
-                Main.player[Projectile.owner].ConsumeItem(chosenAmmo.type);
-            }
+
+
         }
     }
+   
 }

@@ -26,10 +26,19 @@ namespace Bowmancer.Projectiles.Guns
             Projectile.width = 54;
             Projectile.height = 20;
             itemName = "Minishark Summon";
-            numberofShots = 3;
-            nextXShots = 3;
-            spreadCount = 5;
+
+            nextXShots = 1;
+            spreadCount = 3;
             percentNonConsume = 0.33f;
+
+            isGun = true;
+            shootFromCenter = false;
+            useCustomAmmo = false;
+            respectiveItem = new Item(ItemID.Minishark);
+
+
+            shootSound = SoundID.Item11;
+            specialSound = SoundID.Item31;
         }
 
        

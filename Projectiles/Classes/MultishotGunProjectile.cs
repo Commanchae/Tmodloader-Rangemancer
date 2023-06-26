@@ -14,7 +14,7 @@ using Bowmancer.Items.Guns;
 
 namespace Bowmancer.Projectiles
 {
-    public abstract class MultishotGunProjectile : GunSummonProjectile
+    public abstract class MultishotGunProjectile : SummonProjectile
     {
         protected string itemName;
         protected int numberofShots;
@@ -23,39 +23,37 @@ namespace Bowmancer.Projectiles
 
         protected int dustID = DustID.Torch;
 
-        protected override void handleShot(Item chosenAmmo, Vector2 position, Vector2 shootVel, float angleOffset, Vector2 targetCenter)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
 
             if (heldItem.Name.Equals(itemName))
             {
-                specialShotCounter++;
-                
+
                 if (specialShotCounter >= specialShotCooldown)
                 {
                     if (specialShotCounter >= specialShotCooldown + nextXShots)
                     {
-                        Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                        Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
                         specialShotCounter = 0;
-                        Terraria.Audio.SoundEngine.PlaySound(SoundID.Item11);
+                        Terraria.Audio.SoundEngine.PlaySound(shootSound);
                     }
                     else
                     {
-                        for (int i = 0; i < numberofShots; i++)
-                        {
+
                             Dust.NewDust(position, Projectile.width, Projectile.height, dustID);
                             Dust.NewDust(position, Projectile.width, Projectile.height, dustID);
-                            Dust.NewDust(position, Projectile.width, Projectile.height, dustID);
+                            Dust.NewDust(position, Projectile.width, Projectile.height,  dustID);
 
                             for (int j = 0; j < spreadCount; j++)
                             {
-                                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset + (float) rand.Next(-1,2))), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(5)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
 
                             }
 
-                            Terraria.Audio.SoundEngine.PlaySound(SoundID.Item31);
-                            Terraria.Audio.SoundEngine.PlaySound(SoundID.Item11);
-                        }
+                            Terraria.Audio.SoundEngine.PlaySound(specialSound);
+                            Terraria.Audio.SoundEngine.PlaySound(shootSound);
+                        
 
 
                     }
@@ -64,18 +62,17 @@ namespace Bowmancer.Projectiles
 
                 else
                 {
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-                    Terraria.Audio.SoundEngine.PlaySound(SoundID.Item11);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                    Terraria.Audio.SoundEngine.PlaySound(shootSound);
                 }
+                specialShotCounter++;
             }
             else
             {
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
                 specialShotCounter = 0;
-                Terraria.Audio.SoundEngine.PlaySound(SoundID.Item11);
+                Terraria.Audio.SoundEngine.PlaySound(shootSound);
             }
-            consumeAmmo(chosenAmmo.type);
-            specialShotCounter++;
         }
     }
 

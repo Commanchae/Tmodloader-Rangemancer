@@ -13,13 +13,21 @@ namespace Bowmancer.Projectiles.Bows
     {
         public override void setAttributes()
         {
+            //Essentials
+            Projectile.width = 16;
+            Projectile.height = 32;
+
             buff = ModContent.BuffType<GoldBowSummonBuff>();
             shootSpeed = 6.6f;
             specialShotCooldown = 5;
             shootCooldown = 26;
+
+            respectiveItem = new Item(ItemID.GoldBow);
+            // Bow Specific.
+            shootFromCenter = true;
         }
 
-        protected override void handleShot(Item chosenAmmo, Vector2 position, Vector2 shootVel, float angleOffset, Vector2 targetCenter)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
 
@@ -31,7 +39,9 @@ namespace Bowmancer.Projectiles.Bows
                 {
                     if (specialShotCounter >= specialShotCooldown + 2)
                     {
-                        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, Projectile.height / 2), Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)) * 2, ProjectileID.JestersArrow, (int)(Projectile.damage * 1.5f), Projectile.knockBack, Main.myPlayer);
+                        Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.JestersArrow, (int)(Projectile.damage * 1.5f), Projectile.knockBack, Main.myPlayer);
+                        Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedBy(MathHelper.ToRadians(-20)), ProjectileID.JestersArrow, (int)(Projectile.damage * 1.5f), Projectile.knockBack, Main.myPlayer);
+                        Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedBy(MathHelper.ToRadians(-10)), ProjectileID.JestersArrow, (int)(Projectile.damage * 1.5f), Projectile.knockBack, Main.myPlayer);
                         specialShotCounter = 0;
                         Terraria.Audio.SoundEngine.PlaySound(SoundID.Item4);
                     }
@@ -50,21 +60,17 @@ namespace Bowmancer.Projectiles.Bows
 
                 else
                 {
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, Projectile.height / 2), Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
                     Terraria.Audio.SoundEngine.PlaySound(SoundID.Item5);
                 }
             }
             else
             {
                 specialShotCounter = 0;
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, Projectile.height / 2), Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
                 Terraria.Audio.SoundEngine.PlaySound(SoundID.Item5);
             }
 
-            if (chosenAmmo.type != 3103)
-            {
-                Main.player[Projectile.owner].ConsumeItem(chosenAmmo.type);
-            }
 
         }
     }

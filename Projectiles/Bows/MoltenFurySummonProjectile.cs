@@ -18,25 +18,34 @@ namespace Bowmancer.Projectiles.Bows
     {
         public override void setAttributes()
         {
+            //Essentials
+            Projectile.width = 18;
+            Projectile.height = 36;
+
             buff = ModContent.BuffType<MoltenFurySummonBuff>();
             shootSpeed = 8;
             shootCooldown = 22;
+
+            respectiveItem = new Item(ItemID.MoltenFury);
+
+            // Bow Specific.
+            shootFromCenter = true;
         }
 
-        protected override void handleShot(Item chosenAmmo, Vector2 position, Vector2 shootVel, float angleOffset, Vector2 targetCenter)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
 
             if (chosenAmmo.shoot == 1)
             {
 
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, Projectile.height / 2), Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), ProjectileID.FireArrow, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.FireArrow, Projectile.damage, Projectile.knockBack, Main.myPlayer);
                 Terraria.Audio.SoundEngine.PlaySound(SoundID.Item5);
                 Terraria.Audio.SoundEngine.PlaySound(SoundID.Item20);
             }
             else
             {
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, Projectile.height / 2), Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
                 Terraria.Audio.SoundEngine.PlaySound(SoundID.Item5);
             }
 
@@ -47,8 +56,8 @@ namespace Bowmancer.Projectiles.Bows
                 if (specialShotCounter >= specialShotCooldown)
                 {
 
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, Projectile.height / 2), Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), ProjectileID.FireArrow, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, Projectile.height / 2), Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset - 0.2f)), ProjectileID.HellfireArrow, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.FireArrow, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.HellfireArrow, Projectile.damage, Projectile.knockBack, Main.myPlayer);
                     Terraria.Audio.SoundEngine.PlaySound(SoundID.Item5);
                     Terraria.Audio.SoundEngine.PlaySound(SoundID.Item20);
                     specialShotCounter = 0;
@@ -59,12 +68,6 @@ namespace Bowmancer.Projectiles.Bows
                 specialShotCounter = 0;
             }
             {
-            }
-
-            // Does not consume ammo if EndlessQuiver is used.
-            if (chosenAmmo.type != 3103)
-            {
-                Main.player[Projectile.owner].ConsumeItem(chosenAmmo.type);
             }
 
         }
