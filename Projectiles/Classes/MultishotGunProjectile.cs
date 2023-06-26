@@ -29,15 +29,14 @@ namespace Bowmancer.Projectiles
 
             if (heldItem.Name.Equals(itemName))
             {
-                specialShotCounter++;
-                
+
                 if (specialShotCounter >= specialShotCooldown)
                 {
                     if (specialShotCounter >= specialShotCooldown + nextXShots)
                     {
                         Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
                         specialShotCounter = 0;
-                        Terraria.Audio.SoundEngine.PlaySound(SoundID.Item11);
+                        Terraria.Audio.SoundEngine.PlaySound(shootSound);
                     }
                     else
                     {
@@ -52,8 +51,8 @@ namespace Bowmancer.Projectiles
 
                             }
 
-                            Terraria.Audio.SoundEngine.PlaySound(SoundID.Item31);
-                            Terraria.Audio.SoundEngine.PlaySound(SoundID.Item11);
+                            Terraria.Audio.SoundEngine.PlaySound(specialSound);
+                            Terraria.Audio.SoundEngine.PlaySound(shootSound);
                         
 
 
@@ -64,17 +63,16 @@ namespace Bowmancer.Projectiles
                 else
                 {
                     Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-                    Terraria.Audio.SoundEngine.PlaySound(SoundID.Item11);
+                    Terraria.Audio.SoundEngine.PlaySound(shootSound);
                 }
+                specialShotCounter++;
             }
             else
             {
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
                 specialShotCounter = 0;
-                Terraria.Audio.SoundEngine.PlaySound(SoundID.Item11);
+                Terraria.Audio.SoundEngine.PlaySound(shootSound);
             }
-            consumeAmmo(chosenAmmo.type);
-            specialShotCounter++;
         }
     }
 

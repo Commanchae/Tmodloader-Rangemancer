@@ -18,15 +18,25 @@ namespace Bowmancer.Projectiles.Guns
         public override void setAttributes()
         {
             buff = ModContent.BuffType<FlintlockPistolSummonBuff>();
+            Projectile.width = 36;
+            Projectile.height = 22;
             shootSpeed = 5;
             shootCooldown = 16;
             specialShotCooldown = 5;
             itemName = "Flintlock Pistol Summon";
-            numberofShots = 3;
-            nextXShots = 3;
+
+            nextXShots = 1;
             spreadCount = 3;
-            Projectile.width = 36;
-            Projectile.height = 22;
+
+
+            // New Essentials
+            isGun = true;
+            shootFromCenter = false;
+            useCustomAmmo = false;
+            respectiveItem = new Item(ItemID.FlintlockPistol);
+
+            shootSound = SoundID.Item11;
+            specialSound = SoundID.Item31;
         }
     }
 }

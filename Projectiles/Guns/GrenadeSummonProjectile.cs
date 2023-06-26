@@ -14,7 +14,7 @@ using Bowmancer.Items.Guns;
 
 namespace Bowmancer.Projectiles.Guns
 {
-    public class GrenadeSummonProjectile : GunSummonProjectile
+    public class GrenadeSummonProjectile : SummonProjectile
     {
         public override void setAttributes()
         {
@@ -25,37 +25,43 @@ namespace Bowmancer.Projectiles.Guns
             Projectile.knockBack = 5.75f;
             Projectile.width = 14;
             Projectile.height = 20;
-            percentNonConsume = 0;
+
+            percentNonConsume = 0.50f;
+
+            isGun = false;
+            shootFromCenter = true;
+            useCustomAmmo = true;
+            respectiveItem = new Item(ItemID.Grenade);
+
 
         }
 
- 
-
-        protected override void handleShot(Item chosenAmmo, Vector2 position, Vector2 shootVel, float angleOffset, Vector2 targetCenter)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
 
-            if (heldItem.ModItem is GrenadeSummon) {
+            if (heldItem.ModItem is GrenadeSummon)
+            {
                 if (specialShotCounter >= specialShotCooldown)
                 {
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), ProjectileID.BouncyGrenade, (int)(Projectile.damage), Projectile.knockBack, Main.myPlayer);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.BouncyGrenade, (int)(Projectile.damage), Projectile.knockBack, Main.myPlayer);
+                    specialShotCounter = 0;
                 }
                 else
                 {
-                    specialShotCounter = 0;
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), ProjectileID.Grenade, (int)(Projectile.damage), Projectile.knockBack, Main.myPlayer);
+                    
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.Grenade, (int)(Projectile.damage), Projectile.knockBack, Main.myPlayer);
 
                 }
+                specialShotCounter++;
             }
             else
             {
                 specialShotCounter = 0;
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), ProjectileID.Grenade, (int)(Projectile.damage), Projectile.knockBack, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.Grenade, (int)(Projectile.damage), Projectile.knockBack, Main.myPlayer);
 
             }
-            specialShotCounter++;
 
-            consumeAmmo(chosenAmmo.type);
         }
     }
 }

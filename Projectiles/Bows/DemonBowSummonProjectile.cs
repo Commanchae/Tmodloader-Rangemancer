@@ -14,17 +14,28 @@ using Bowmancer.Items.Bows;
 
 namespace Bowmancer.Projectiles.Bows
 {
-    public class DemonBowSummonProjectile : NewSummonProjectile
+    public class DemonBowSummonProjectile : SummonProjectile
     {
         public override void setAttributes()
         {
+            // Essential
+            Projectile.width = 18;
+            Projectile.height = 40;
+
             buff = ModContent.BuffType<DemonBowSummonBuff>();
             shootSpeed = 6.7f;
             shootCooldown = 25;
             specialShotCooldown = 2;
+
+            // Bow Specific.
+            shootFromCenter = true;
+            shootSound = SoundID.Item5;
+            specialSound = SoundID.NPCHit13;
+
+            respectiveItem = new Item(ItemID.DemonBow);
         }
 
-        protected override void handleShot(Item chosenAmmo, Vector2 position, Vector2 shootVel, float angleOffset, Vector2 targetCenter)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
 
@@ -34,30 +45,25 @@ namespace Bowmancer.Projectiles.Bows
 
                 if (specialShotCounter >= specialShotCooldown)
                 {
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, Projectile.height / 2), Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), ProjectileID.UnholyArrow, (int)(Projectile.damage * 1.6f), Projectile.knockBack, Main.myPlayer);
-                    Terraria.Audio.SoundEngine.PlaySound(SoundID.NPCHit13);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.UnholyArrow, (int)(Projectile.damage * 1.6f), Projectile.knockBack, Main.myPlayer);
+                    Terraria.Audio.SoundEngine.PlaySound(specialSound);
                     specialShotCounter = 0;
                 }
                 else
                 {
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, Projectile.height / 2), Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-                    Terraria.Audio.SoundEngine.PlaySound(SoundID.Item5);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                    Terraria.Audio.SoundEngine.PlaySound(shootSound);
                 }
             }
             else
             {
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position + new Vector2(0, Projectile.height / 2), Vector2.Transform(shootVel, Matrix.CreateRotationX(angleOffset)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                Terraria.Audio.SoundEngine.PlaySound(shootSound);
                 specialShotCounter = 0;
             }
             {
             }
 
-            // Does not consume ammo if EndlessQuiver is used.
-            if (chosenAmmo.type != 3103)
-            {
-                Main.player[Projectile.owner].ConsumeItem(chosenAmmo.type);
-            }
 
         }
     }

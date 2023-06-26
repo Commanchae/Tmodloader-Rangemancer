@@ -30,6 +30,7 @@ namespace Bowmancer.Projectiles
         protected int specialShotCounter = 0;
         protected float searchDistance = 600f;
 
+        protected float degreesShotSpread = 0f;
         protected bool isGun = false;
         protected bool useCustomAmmo = false;
         protected Item respectiveItem = new Item();
@@ -37,6 +38,8 @@ namespace Bowmancer.Projectiles
         protected Random rand = new Random();
         protected float percentNonConsume = 0f;
         protected bool shootFromCenter = false; // true for bows, shoots from the strings instead of the chamber.
+        protected Terraria.Audio.SoundStyle shootSound = SoundID.Item11;
+        protected Terraria.Audio.SoundStyle specialSound = SoundID.Item31;
 
         private int tickTest = 0;
 
@@ -59,9 +62,6 @@ namespace Bowmancer.Projectiles
         public sealed override void SetDefaults()
         {
             setAttributes();
-            //shootSpeed = 12f;
-            Projectile.width = 18;
-            Projectile.height = 28;
             Projectile.tileCollide = false; // Makes the minion go through tiles freely
 
             // These below are needed for a minion weapon
@@ -265,7 +265,7 @@ namespace Bowmancer.Projectiles
                     if (!shootFromCenter)
                     {
                         initialPosition.X += (Projectile.width / 2f);
-                        if (direction.X <= 0f)
+                        if ((targetCenter.X - initialPosition.X) <= 0f)
                         {
                             initialPosition.X -= (Projectile.width / 2f);
                         }
@@ -276,13 +276,31 @@ namespace Bowmancer.Projectiles
 
                 {
                     Projectile.spriteDirection = Projectile.direction = -1;
-                    initialPosition.X -= (Projectile.width / 2f);
-                    if ((targetCenter.X - initialPosition.X) < 0f)
+                    if (!shootFromCenter)
                     {
-                        initialPosition.X += (Projectile.width / 2f);
+                        initialPosition.X -= (Projectile.width / 2f);
+                        if ((targetCenter.X - initialPosition.X) >= 0f)
+                        {
+                            initialPosition.X += (Projectile.width / 2f);
+                        }
                     }
                 }
 
+
+                if (!shootFromCenter)
+                {
+                    direction = targetCenter - Projectile.Center;
+                    float theta = (float)Math.Atan((double)direction.Y / (double)direction.X);
+
+                    initialPosition -= Projectile.Center;
+                    float newX = initialPosition.X * MathF.Cos(theta) + initialPosition.Y * MathF.Sin(theta);
+                    float newY = -initialPosition.X * MathF.Sin(theta) + initialPosition.Y * MathF.Cos(theta);
+
+                    // Create the rotated vector
+                    Vector2 rotatedVector = new Vector2(newX,  -1*newY);
+                    initialPosition = Projectile.Center;
+
+                }
 
                 if (shootCounter >= shootCooldown)
                 {
@@ -291,7 +309,7 @@ namespace Bowmancer.Projectiles
                     {
                         handleShot(initialPosition, direction);
                     }
-                    }
+                }
 
                 
             }
@@ -388,6 +406,7 @@ namespace Bowmancer.Projectiles
         {
             // Check if ammo is projectile motion.
             // If isGun evalutes to true, the motion is straight and not projectile.
+            // Also rotates projectile.
             Vector2 returnVelocity;
             if (isProjectileMotion)
             {
@@ -471,12 +490,10 @@ namespace Bowmancer.Projectiles
                 {
                     isProjectileMotion = true;
                 }
+                Vector2 velocity = calculateVelocity(shootSpeed + chosenAmmo.shootSpeed, displacement, isProjectileMotion);
+                shoot(chosenAmmo, initialPosition, velocity);
+                consumeAmmo(chosenAmmo.type);
             }
-
-            Vector2 velocity = calculateVelocity(shootSpeed + chosenAmmo.shootSpeed, displacement, isProjectileMotion);
-            shoot(chosenAmmo, initialPosition, velocity);
-            consumeAmmo(chosenAmmo.type);
-            // Consume ammo.
 
         }
 
@@ -494,6 +511,12 @@ namespace Bowmancer.Projectiles
 
 
             return returnVal;
+        }
+
+        protected float calculateNonConsumptionChance()
+        {
+            // Implement ammo conservation logic here.
+            return percentNonConsume;
         }
 
         protected void consumeAmmo(int ammoType)

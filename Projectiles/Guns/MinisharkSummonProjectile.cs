@@ -33,7 +33,12 @@ namespace Bowmancer.Projectiles.Guns
 
             isGun = true;
             shootFromCenter = false;
+            useCustomAmmo = false;
             respectiveItem = new Item(ItemID.Minishark);
+
+
+            shootSound = SoundID.Item11;
+            specialSound = SoundID.Item31;
         }
 
        
