@@ -47,7 +47,7 @@ namespace Bowmancer.Projectiles
 
                             for (int j = 0; j < spreadCount; j++)
                             {
-                                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(5)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(10)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
 
                             }
 

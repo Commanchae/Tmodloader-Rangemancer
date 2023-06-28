@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Bowmancer.Buffs;
-using Bowmancer.Projectiles.Bows;
+using Bowmancer.Projectiles.ProjectileWeapons.Bows;
 
 namespace Bowmancer.Items.Bows
 {

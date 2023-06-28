@@ -12,7 +12,7 @@ using Bowmancer.Buffs;
 using System.Collections.Specialized;
 using Bowmancer.Items.Guns;
 
-namespace Bowmancer.Projectiles.Guns
+namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
 {
     public class MusketSummonProjectile : CritshotGunProjectile
     {
@@ -22,7 +22,7 @@ namespace Bowmancer.Projectiles.Guns
             shootSpeed = 9f;
             shootCooldown = 32;
             specialShotCooldown = 5;
-            itemName = "Musket Summon";
+            itemName = "Enchanted Musket";
             damageMultiplier = 1.5f;
             Projectile.width = 56;
             Projectile.height = 18;

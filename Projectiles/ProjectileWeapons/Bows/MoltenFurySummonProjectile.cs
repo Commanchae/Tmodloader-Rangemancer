@@ -12,7 +12,7 @@ using Bowmancer.Buffs;
 using System.Collections.Specialized;
 using Bowmancer.Items.Bows;
 
-namespace Bowmancer.Projectiles.Bows
+namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
 {
     public class MoltenFurySummonProjectile : SummonProjectile
     {
@@ -30,6 +30,8 @@ namespace Bowmancer.Projectiles.Bows
 
             // Bow Specific.
             shootFromCenter = true;
+
+            specialShotCooldown = 3;
         }
 
         protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)

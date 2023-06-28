@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Bowmancer.Buffs;
-using Bowmancer.Projectiles.Bows;
+using Bowmancer.Projectiles.ProjectileWeapons.Bows;
 
 namespace Bowmancer.Items.Bows
 {
@@ -14,11 +14,19 @@ namespace Bowmancer.Items.Bows
         {
             buff = ModContent.BuffType<PlatinumBowSummonBuff>();
             projectile = ModContent.ProjectileType<PlatinumBowSummonProjectile>();
-            name = "Platinum Bow Summon";
+            name = "Enchanted Platinum Bow";
             damage = 11;
             knockBack = 3f;
-            mana = 10;
+            mana = 15;
             itemID = ItemID.PlatinumBow;
+
+
+            itemDescription = "Summons an enchanted [c/e5e4e2:platinum bow] to fight for you!";
+            abilityDescription = "Shoots a grenade after every five shots!";
+            abilityNameColor = "C0C0C0";
+            abilityName = "Explosive Arsenal";
+
+
         }
 
     }

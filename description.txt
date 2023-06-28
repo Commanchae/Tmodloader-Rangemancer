@@ -1,5 +1,10 @@
 [b][Currently up to Pre-hardmode Content][/b]
 
+Latest Update: Clockwork Assault Rifle and Onyx Blaster added, item description revamp!
+v0.6.0.0:
+- Added clockwork assault rifle summon.
+- Added onyx blaster summon.
+- Revamp item names, descriptions, and ability descriptions.
 
 [h2] Description [/h2]
 
@@ -8,49 +13,51 @@ Have you ever thought about how awesome it would be if you could summon your bel
 
 This is all possible with Rangemancer.
 
-With Rangemancer, you have the ability to convert certain ranged weapons to their summoning counterpart, allowing you to summon them to fight alongside you.
+With Rangemancer, you have the ability to enchant certain ranged weapons, coverting them to their summoning counterpart, allowing you to summon them to fight alongside you.
 
 [h2] Main features [/h2]
 1. You can convert certain bows and guns to their summoning counterparts.
 2. The weapons will consume the ammo in your inventory. (Bows that have special effects from using wooden arrows will retain their effects (some effects may not work correctly for now))
 3. Holding the respective summon item will allow that ranged weapon to use its special ability after a specific number of shots.
 
-There are currently 13 weapons (pre-hardmode) available:
+There are currently 19 weapons (17 pre-hardmode, 2 hardmode) available:
 
 [h3] Bows [/h3]
-1. Wooden Bow Summon (1 x Wooden Bow + 3 x Fallen Star @ Workbench)
-2. Gold Bow Summon (1 x Gold Bow + 3 x Fallen Star @ Workbench)
-3. Tendon Bow Summon (1 x Tendon Bow / Demon Bow + 3 x Fallen Star @ Workbench)
-4. The Bee's Knees Summon (1 x The Bee's Knees + 3 x Fallen Star @ Workbench)
-5. Molten Fury Summon (1 x Molten Fury + 3 x Fallen Star @ Workbench)
-6. Boreal Bow Summon (1 x Boreal Bow + 3 x Fallen Star @ Workbench)
-7. Demon Bow Summon (1 x Demon Bow + 3 x Fallen Star @ Workbench)
-8. Platinum Bow Summon (1 x Platinum Bow + 3 x Fallen Star @ Workbench)
+1. Enchanted Wooden Bow (1 x Wooden Bow + 3 x Fallen Star @ Workbench)
+2. Enchanted Gold Bow (1 x Gold Bow + 3 x Fallen Star @ Workbench)
+3. Enchanted Tendon Bow (1 x Tendon Bow / Demon Bow + 3 x Fallen Star @ Workbench)
+4. Enchanted Bee's Knees (1 x The Bee's Knees + 3 x Fallen Star @ Workbench)
+5. Enchanted Molten Fury (1 x Molten Fury + 3 x Fallen Star @ Workbench)
+6. Enchanted Boreal Bow (1 x Boreal Bow + 3 x Fallen Star @ Workbench)
+7. Enchanted Demon Bow (1 x Demon Bow + 3 x Fallen Star @ Workbench)
+8. Enchanted Platinum Bow (1 x Platinum Bow + 3 x Fallen Star @ Workbench)
 
 [h3] Guns [/h3]
-1. Flintlock Pistol Summon (1 x Flintlock Pistol + 3 x Fallen Star @ Workbench) 
-2. Minishark Summon (1 x Minishark + 3 x Fallen Star @ Workbench) 
-3. Musket Summon (1 x Musket + 3 x Fallen Star @ Workbench) 
-4. Boomstick Summon (1 x Boomstick + 3 x Fallen Star @ Workbench)
- 
+1. Enchanted Flintlock Pistol (1 x Flintlock Pistol + 3 x Fallen Star @ Workbench) 
+2. Enchanted Minishark (1 x Minishark + 3 x Fallen Star @ Workbench) 
+3. Enchanted Musket (1 x Musket + 3 x Fallen Star @ Workbench) 
+4. Enchanted Boomstick (1 x Boomstick + 3 x Fallen Star @ Workbench)
+5. Enchanted Snowball Cannon (1 x Snowball Cannon + 3 x Fallen Star @ Workbench)
+6. Enchanted Undertaker (1 x The Undertaker + 3 x Fallen Star @ Workbench)
+7. Enchanted Blowpipe (1 x Blowpipe + 3 x Fallen Star @ Workbench)
+8. Enchanted Clockwork Assault Rifle (1 x Clockwork Assault Rifle + 3 x Fallen Star @ Workbench)
+9. Enchanted Onyx Blaster (1 x Onyx Blaster+ 3 x Fallen Star @ Workbench)
+
  [h3] Miscellaneous [/h3]
- 1. Grenade Summon (1 x Grenade + 3 x Fallen Star @ Workbench) (Recipe may be changed to be more expensive.)
-(Currently consumes bullets)
+1. Enchanted Grenade (1 x Grenade + 3 x Fallen Star @ Workbench) (Consumes grenades (50% consumption rate))
+2. Enchanted Shuriken (1 x Shuriken + 3 x Fallen Star @ Workbench) (Consumes shurikens (35% consumption rate))
 
 [h2] Notes [/h2]
 1. This mod is a simply a passion project. I'll only work on it when I can.
-2. The aiming is a bit off at certain ranges for bows.
-3. I have not tested this with other mods, therefore I won't be able to guarantee mod compatibility.
-4. A bug currently exists where bows may randomly disappear.
-5. The ammo only interacts correctly with the Endless Quiver/MusketPouch and not accessories like Magic Quiver, etc.
-7. Guns and bows don't seem to aim too well for targets directly above or below.
+2. I have not tested this with other mods, therefore I won't be able to guarantee mod compatibility.
+3. The ammo only interacts correctly with the Endless Quiver/MusketPouch and not accessories like Magic Quiver, etc.
+
+[h2] Known Bugs [/h2]
+- A bug currently exists where bows may randomly disappear.
 
 [h2]Plans for Next Update:[/h2]
-[h3] Please suggest any weapon you'd like to see in the comments [/h3]
-Summons to Add:
-- Snowball Cannon Summon
-- Blowpipe Summon
-- Undertaker Summon
+- Either continue  creating hardmode weapons or start porting to 1.4.4.
+- More exclusive abilities for other weapons.
 
 [h2] Future Plans [/h2]
 1. More weapons.
@@ -59,6 +66,7 @@ Summons to Add:
 
 
 [h3] Important: Feedback will be greatly appreciated, but please be nice :3 [/h3]
+Please kindly report any bugs as well!
 
 [h2] Credits [/h2]
 
@@ -66,11 +74,23 @@ Code modified/inspired from (much thanks!):
 [1] https://github.com/tModLoader/tModLoader/wiki/Basic-Minion-Guide
 [2] https://www.youtube.com/@riptidedev3471
 
+Sprites used are either directly from or a modified version of the official Terraria sprites.
+
+
 [h3] Updates [/h3]:
+v0.6.0.0:
+- Added clockwork assault rifle summon.
+- Added onyx blaster summon.
+- Revamp item names, descriptions, and ability descriptions.
+
+
 v0.5.0.0:
 - Fixed the aim of guns for targets right below/above them.
 - Lowered base spread for boomstick summon.
-- Added snowball cannon summon.
+- Added snowball cannon summon. (Multishot Special Ability)
+- Added undertaker summon. (Multishot Special Ability)
+- Added shuriken summon. (Exclusive ability: Ramps up shooting speed every 5 shots until limit)
+- Adjusted the abilities of some weapons.
 
 v0.4.0.1
 - Workshop page changes.
@@ -98,4 +118,5 @@ v0.3.1.0:
 - Added minishark and musket summon.
 - Weapons now rotate according to where they are shooting.
 - The price of the weapons are now the same as their ranged counterparts.
+[quote=tModLoader]Developed By Taylor[/quote]
 [quote=tModLoader]Developed By Taylor[/quote]

@@ -1,7 +1,6 @@
 ﻿using Terraria.ModLoader;
 using Terraria;
-using Bowmancer.Projectiles.Bows;
-using Bowmancer.Projectiles.Guns;
+using Bowmancer.Projectiles.ProjectileWeapons.Misc;
 
 namespace Bowmancer.Buffs
 {

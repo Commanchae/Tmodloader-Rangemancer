@@ -4,8 +4,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Bowmancer.Buffs;
-using Bowmancer.Projectiles.Guns;
-using Bowmancer.Projectiles.Misc;
+using Bowmancer.Projectiles.ProjectileWeapons.Guns;
 
 namespace Bowmancer.Items.Guns
 {
@@ -15,11 +14,16 @@ namespace Bowmancer.Items.Guns
         {
             buff = ModContent.BuffType<SnowballCannonSummonBuff>();
             projectile = ModContent.ProjectileType<SnowballCannonSummonProjectile>();
-            name = "Snowball Cannon Summon";
+            name = "Enchanted Snowball Cannon";
             damage = 10;
             knockBack = 1;
-            mana = 10;
+            mana = 15;
             itemID = ItemID.SnowballCannon;
+
+            itemDescription = "Summons an enchanted [c/2AF34D:snowball cannon] to fight for you!";
+            abilityDescription = "Shoots additional snowballs with every third shot.";
+            abilityNameColor = "78D8FF";
+            abilityName = "Blizzard";
         }
 
     }

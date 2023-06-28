@@ -11,7 +11,7 @@ using Terraria.ID;
 using Bowmancer.Buffs;
 using System.Collections.Specialized;
 
-namespace Bowmancer.Projectiles.Bows
+namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
 {
     public class BeeBowSummonProjectile : AdditionalProjectileProjectile
     {
@@ -32,7 +32,7 @@ namespace Bowmancer.Projectiles.Bows
             specialSound = SoundID.Item17;
 
             specialShotCooldown = 3;
-            itemName = "The Bee's Knees Summon";
+            itemName = "Enchanted Bee's Knees";
             respectiveItem = new Item(ItemID.BeesKnees);
             specialAmmoID = ProjectileID.HornetStinger;
             dustID = DustID.Honey;
@@ -92,5 +92,5 @@ namespace Bowmancer.Projectiles.Bows
 
 
     }
-  
+
 }

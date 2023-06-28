@@ -12,7 +12,7 @@ using Bowmancer.Buffs;
 using System.Collections.Specialized;
 using Bowmancer.Items.Guns;
 
-namespace Bowmancer.Projectiles.Guns
+namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
 {
     public class BoomstickSummonProjectile : ShotGunProjectile
     {
@@ -26,7 +26,7 @@ namespace Bowmancer.Projectiles.Guns
             shootSpeed = 5.35f;
             shootCooldown = 40;
             specialShotCooldown = 5;
-            itemName = "Boomstick Summon";
+            itemName = "Enchanted Boomstick";
 
             // ShotGunProjectile
             spreadCount = 3f;
@@ -43,6 +43,7 @@ namespace Bowmancer.Projectiles.Guns
             // Sounds
             shootSound = SoundID.Item36;
             specialSound = SoundID.Item31;
+
         }
     }
 }

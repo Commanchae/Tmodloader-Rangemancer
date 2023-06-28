@@ -13,7 +13,7 @@ using System.Collections.Specialized;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using Bowmancer.Items.Guns;
 
-namespace Bowmancer.Projectiles.Guns
+namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
 {
     public class MinisharkSummonProjectile : MultishotGunProjectile
     {
@@ -27,7 +27,7 @@ namespace Bowmancer.Projectiles.Guns
             Projectile.height = 20;
             itemName = "Minishark Summon";
 
-            nextXShots = 1;
+            nextXShots = 5;
             spreadCount = 3;
             percentNonConsume = 0.33f;
 

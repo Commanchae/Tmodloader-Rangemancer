@@ -34,12 +34,14 @@ namespace Bowmancer.Projectiles
         protected bool isGun = false;
         protected bool useCustomAmmo = false;
         protected Item respectiveItem = new Item();
-        protected List<Item> notProjectileMotion = new List<Item> {new Item(ItemID.JestersArrow)};
+        protected List<Item> notProjectileMotion = new List<Item> {new Item(ItemID.JestersArrow), new Item(ItemID.CrystalDart) };
         protected Random rand = new Random();
         protected float percentNonConsume = 0f;
         protected bool shootFromCenter = false; // true for bows, shoots from the strings instead of the chamber.
         protected Terraria.Audio.SoundStyle shootSound = SoundID.Item11;
         protected Terraria.Audio.SoundStyle specialSound = SoundID.Item31;
+
+        protected bool consumeAmmoItem = true;
 
         private int tickTest = 0;
 
@@ -521,17 +523,20 @@ namespace Bowmancer.Projectiles
 
         protected void consumeAmmo(int ammoType)
         {
-            int number = rand.Next(1, 101);
-
-            // Implement ammo conservation. 
-
-
-            if (number >= (int)101 * percentNonConsume)
+            if (consumeAmmoItem)
             {
-                // weaponType: 0 for Bows, 1 for Guns.
-                if (ammoType != 3103 && ammoType != 3104)
+                int number = rand.Next(1, 101);
+
+                // Implement ammo conservation. 
+
+
+                if (number >= (int)101 * percentNonConsume)
                 {
-                    Main.player[Projectile.owner].ConsumeItem(ammoType);
+                    // weaponType: 0 for Bows, 1 for Guns.
+                    if (ammoType != 3103 && ammoType != 3104)
+                    {
+                        Main.player[Projectile.owner].ConsumeItem(ammoType);
+                    }
                 }
             }
         }

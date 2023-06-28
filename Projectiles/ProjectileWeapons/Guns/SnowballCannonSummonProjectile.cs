@@ -13,7 +13,7 @@ using System.Collections.Specialized;
 using Bowmancer.Items.Guns;
 using Bowmancer.Items.Bows;
 
-namespace Bowmancer.Projectiles.Misc
+namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
 {
     public class SnowballCannonSummonProjectile : MultishotGunProjectile
     {
@@ -22,14 +22,16 @@ namespace Bowmancer.Projectiles.Misc
             buff = ModContent.BuffType<SnowballCannonSummonBuff>();
             shootSpeed = 11f;
             shootCooldown = 19;
-            specialShotCooldown = 5;
+            specialShotCooldown = 3;
             respectiveItem = new Item(ItemID.SnowballCannon);
-            itemName = "Snowball Cannon Summon";
+            itemName = "Enchanted Snowball Cannon";
             Projectile.width = 50;
             Projectile.height = 26;
 
             nextXShots = 1;
             spreadCount = 3;
+
+            specialSound = SoundID.Item28;
 
             isGun = true;
             shootFromCenter = false;

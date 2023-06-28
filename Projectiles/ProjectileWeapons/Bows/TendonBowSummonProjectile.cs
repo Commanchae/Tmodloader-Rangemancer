@@ -12,57 +12,59 @@ using Bowmancer.Buffs;
 using System.Collections.Specialized;
 using Bowmancer.Items.Bows;
 
-namespace Bowmancer.Projectiles.Bows
+namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
 {
-    public class DemonBowSummonProjectile : SummonProjectile
+    public class TendonBowSummonProjectile : SummonProjectile
     {
         public override void setAttributes()
         {
-            // Essential
-            Projectile.width = 18;
+            Projectile.width = 22;
             Projectile.height = 40;
 
-            buff = ModContent.BuffType<DemonBowSummonBuff>();
-            shootSpeed = 6.7f;
-            shootCooldown = 25;
+            buff = ModContent.BuffType<TendonBowSummonBuff>();
             specialShotCooldown = 2;
+            shootSpeed = 6.7f;
+            shootCooldown = 30;
 
             // Bow Specific.
             shootFromCenter = true;
             shootSound = SoundID.Item5;
             specialSound = SoundID.NPCHit13;
 
-            respectiveItem = new Item(ItemID.DemonBow);
+            respectiveItem = new Item(ItemID.TendonBow);
         }
 
         protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
+
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
 
-            if (heldItem.ModItem is DemonBowSummon)
+
+            if (heldItem.ModItem is TendonBowSummon)
             {
                 specialShotCounter++;
 
                 if (specialShotCounter >= specialShotCooldown)
                 {
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.UnholyArrow, (int)(Projectile.damage * 1.6f), Projectile.knockBack, Main.myPlayer);
-                    Terraria.Audio.SoundEngine.PlaySound(specialSound);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.BloodArrow, (int)(Projectile.damage * 1.6f), Projectile.knockBack, Main.myPlayer);
+                    Terraria.Audio.SoundEngine.PlaySound(SoundID.NPCHit13);
                     specialShotCounter = 0;
                 }
                 else
                 {
                     Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-                    Terraria.Audio.SoundEngine.PlaySound(shootSound);
+                    Terraria.Audio.SoundEngine.PlaySound(SoundID.Item5);
                 }
             }
             else
             {
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-                Terraria.Audio.SoundEngine.PlaySound(shootSound);
+
                 specialShotCounter = 0;
             }
             {
             }
+
 
 
         }

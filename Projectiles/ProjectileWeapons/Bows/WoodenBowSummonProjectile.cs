@@ -10,12 +10,13 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Bowmancer.Buffs;
 using System.Collections.Specialized;
+using Bowmancer.Items;
 using IL.Terraria.Audio;
 using Bowmancer.Items.Bows;
 
-namespace Bowmancer.Projectiles.Bows
+namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
 {
-    public class BorealBowSummonProjectile : AdditionalProjectileProjectile
+    public class WoodenBowSummonProjectile : AdditionalProjectileProjectile
     {
         public override void setAttributes()
         {
@@ -24,21 +25,21 @@ namespace Bowmancer.Projectiles.Bows
             Projectile.height = 32;
 
             // Class Specific.
-            buff = ModContent.BuffType<BorealBowSummonBuff>();
-            shootSpeed = 6.6f;
+            buff = ModContent.BuffType<WoodenBowSummonBuff>();
+            shootSpeed = 6.1f;
             shootCooldown = 30;
 
             // Bow Specific.
             shootFromCenter = true;
             shootSound = SoundID.Item5;
-            specialSound = SoundID.Item5;
+            specialSound = SoundID.Dig;
 
             specialShotCooldown = 3;
-            itemName = "Boreal Bow Summon";
-            respectiveItem = new Item(ItemID.BorealWoodBow);
-            specialAmmoID = ProjectileID.SnowBallFriendly;
-            dustID = DustID.Snow;
-            noOfAdditionalProjectiles = 3;
+            itemName = "Enchanted Wooden Bow";
+            respectiveItem = new Item(ItemID.WoodenBow);
+            specialAmmoID = ProjectileID.Seed;
+            dustID = DustID.Dirt;
+            noOfAdditionalProjectiles = 2;
             specialShotSpread = 30;
             specialProjectileSpeedMultiplier = 1f;
 
@@ -48,5 +49,4 @@ namespace Bowmancer.Projectiles.Bows
 
         }
     }
-   
 }

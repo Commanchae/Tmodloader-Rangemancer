@@ -13,7 +13,8 @@ using System.Collections.Specialized;
 using Bowmancer.Items;
 using IL.Terraria.Audio;
 using Bowmancer.Items.Bows;
-namespace Bowmancer.Projectiles.Bows
+
+namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
 {
     public class TestProjectile : SummonProjectile
     {

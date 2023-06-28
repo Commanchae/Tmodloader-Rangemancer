@@ -11,7 +11,7 @@ using Terraria.ID;
 using Bowmancer.Buffs;
 using System.Collections.Specialized;
 
-namespace Bowmancer.Projectiles.Guns
+namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
 {
     public class FlintlockPistolSummonProjectile : MultishotGunProjectile
     {
@@ -23,7 +23,7 @@ namespace Bowmancer.Projectiles.Guns
             shootSpeed = 5;
             shootCooldown = 16;
             specialShotCooldown = 5;
-            itemName = "Flintlock Pistol Summon";
+            itemName = "Enchanted Flintlock Pistol";
 
             nextXShots = 1;
             spreadCount = 3;

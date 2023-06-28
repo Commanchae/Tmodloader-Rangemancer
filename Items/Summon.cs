@@ -19,6 +19,11 @@ namespace Bowmancer.Items
         protected int itemID;
         protected bool craftable = true;
 
+        protected string itemDescription = "";
+        protected string abilityDescription = "";
+        protected string abilityName = "";
+        protected string abilityNameColor = "";
+
 
         public override void SetStaticDefaults()
         {
@@ -26,11 +31,18 @@ namespace Bowmancer.Items
             ItemID.Sets.LockOnIgnoresCollision[Item.type] = true;
 
             ItemID.Sets.StaffMinionSlotsRequired[Type] = (int)1f; // The default value is 1, but other values are supported. See the docs for more guidance. 
+            setStaticAttributes();
         }
 
         public virtual void setAttributes()
         {
+        }
 
+        public virtual void setStaticAttributes()
+        {
+            string concat = "\n[c/a555d7:Special Ability]\n";
+
+            Tooltip.SetDefault(itemDescription + "\n" + "[c/" + abilityNameColor + ":" + abilityName + "]: " + abilityDescription); ;
         }
 
         public override void SetDefaults()
@@ -46,7 +58,7 @@ namespace Bowmancer.Items
             Item.useStyle = ItemUseStyleID.Shoot; // how the player's arm moves when using the item
             Item tempItem = new Item(itemID);
             Item.value = tempItem.value;
-            Item.rare = ItemRarityID.Cyan;
+            Item.rare = tempItem.rare;
             Item.UseSound = SoundID.Item44; // What sound should play when using the item
 
             // These below are needed for a minion weapon
@@ -72,6 +84,10 @@ namespace Bowmancer.Items
 
             // Minions have to be spawned manually, then have originalDamage assigned to the damage of the summon item
             var projectile = Projectile.NewProjectileDirect(source, position, velocity, type, damage, knockback, Main.myPlayer);
+            for (int i = 0; i < 10; i++)
+            {
+                Dust.NewDust(position, 5, 5, DustID.YellowStarDust, Scale:1.2f);
+            }
             projectile.originalDamage = Item.damage;
 
             // Since we spawned the projectile manually already, we do not need the game to spawn it for ourselves anymore, so return false

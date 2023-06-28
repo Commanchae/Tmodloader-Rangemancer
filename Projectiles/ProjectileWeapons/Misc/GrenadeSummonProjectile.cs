@@ -10,9 +10,9 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Bowmancer.Buffs;
 using System.Collections.Specialized;
-using Bowmancer.Items.Guns;
+using Bowmancer.Items.Misc;
 
-namespace Bowmancer.Projectiles.Guns
+namespace Bowmancer.Projectiles.ProjectileWeapons.Misc
 {
     public class GrenadeSummonProjectile : SummonProjectile
     {
@@ -44,13 +44,13 @@ namespace Bowmancer.Projectiles.Guns
             {
                 if (specialShotCounter >= specialShotCooldown)
                 {
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.BouncyGrenade, (int)(Projectile.damage), Projectile.knockBack, Main.myPlayer);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.BouncyGrenade, Projectile.damage, Projectile.knockBack, Main.myPlayer);
                     specialShotCounter = 0;
                 }
                 else
                 {
-                    
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.Grenade, (int)(Projectile.damage), Projectile.knockBack, Main.myPlayer);
+
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.Grenade, Projectile.damage, Projectile.knockBack, Main.myPlayer);
 
                 }
                 specialShotCounter++;
@@ -58,7 +58,7 @@ namespace Bowmancer.Projectiles.Guns
             else
             {
                 specialShotCounter = 0;
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.Grenade, (int)(Projectile.damage), Projectile.knockBack, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.Grenade, Projectile.damage, Projectile.knockBack, Main.myPlayer);
 
             }
 

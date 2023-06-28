@@ -30,7 +30,7 @@ namespace Bowmancer.Projectiles
 
             if (heldItem.Name.Equals(itemName))
             {
-                specialShotCounter++;
+
                 float specialShotMultiplier = 1;
                 float degreesShotSpread = degreesSpread;
                 if (specialShotCounter >= specialShotCooldown)
@@ -47,6 +47,7 @@ namespace Bowmancer.Projectiles
 
                 }
                 Terraria.Audio.SoundEngine.PlaySound(shootSound);
+                specialShotCounter++;
             }
             else
             {
