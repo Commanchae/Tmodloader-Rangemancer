@@ -20,7 +20,7 @@ namespace Bowmancer.Items.Guns
             mana = 15;
             itemID = ItemID.SnowballCannon;
 
-            itemDescription = "Summons an enchanted [c/2AF34D:snowball cannon] to fight for you!";
+            itemDescription = "Summons an enchanted [c/2e7eff:snowball cannon] to fight for you!";
             abilityDescription = "Shoots additional snowballs with every third shot.";
             abilityNameColor = "78D8FF";
             abilityName = "Blizzard";

@@ -44,7 +44,7 @@ namespace Bowmancer.Items
         {
             string concat = "\n[c/a555d7:Special Ability]\n";
 
-            Tooltip.SetDefault(itemDescription + "\n" + "[c/" + abilityNameColor + ":" + abilityName + "]: " + abilityDescription); ;
+            // Tooltip.SetDefault(itemDescription + "\n" + "[c/" + abilityNameColor + ":" + abilityName + "]: " + abilityDescription); ;
         }
 
         public override void SetDefaults()

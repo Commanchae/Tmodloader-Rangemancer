@@ -1,8 +1,7 @@
 P.S. Thanks for the support, everyone!
 
 [Currently starting to develop hardmode weapons.]
-(I will still keep 1.4.3 updated, at least until the main content is finished or 1.4.4 becomes stable)
-v1.1.0.0:
+v1.1.0.0 (now for both 1.4.3 and 1.4.4):
 - Added daedalus stormbow summon.
 - Introduced penalty mechanic where ranged summons of the same item will have a slight damage penalty (0.95 multiplier for each summon of the same item)
 
@@ -80,6 +79,9 @@ Code modified/inspired from (much thanks!):
 Sprites used are either directly from or a modified version of the official Terraria sprites.
 
 Updates
+v1.1.0.1:
+- Update patch for 1.4.4 version
+
 v1.1.0.0:
 - Added daedalus stormbow summon.
 - Introduced penalty mechanic where ranged summons of the same item will have a slight damage penalty (0.95 multiplier for each summon of the same item)

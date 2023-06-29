@@ -18,8 +18,8 @@ namespace Bowmancer.Buffs
             setAttributes();
             Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = true; // The time remaining won't display on this buff
-            DisplayName.SetDefault(this.name);
-            Description.SetDefault(this.description);
+            // DisplayName.SetDefault(this.name);
+            // Description.SetDefault(this.description);
 
 
         }

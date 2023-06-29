@@ -20,7 +20,7 @@ namespace Bowmancer.Items.Guns
             itemID = ItemID.Boomstick;
 
 
-            itemDescription = "Summons an enchanted [c/2AF34D:boomstick] to fight for you!";
+            itemDescription = "Summons an enchanted [c/b33b00:boomstick] to fight for you!";
             abilityDescription = "Shoots additional bursts of projectiles every five shots.";
             abilityNameColor = "FF5200";
             abilityName = "Rapid Blitz";

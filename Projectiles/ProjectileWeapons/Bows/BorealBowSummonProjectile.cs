@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria.Audio;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -10,7 +11,6 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Bowmancer.Buffs;
 using System.Collections.Specialized;
-using IL.Terraria.Audio;
 using Bowmancer.Items.Bows;
 
 namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
