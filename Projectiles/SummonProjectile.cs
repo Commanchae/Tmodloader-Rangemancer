@@ -41,6 +41,9 @@ namespace Bowmancer.Projectiles
         protected Terraria.Audio.SoundStyle shootSound = SoundID.Item11;
         protected Terraria.Audio.SoundStyle specialSound = SoundID.Item31;
 
+
+        protected Vector2 targetLocation = Vector2.Zero;
+
         protected bool consumeAmmoItem = true;
 
         private int tickTest = 0;
@@ -259,6 +262,7 @@ namespace Bowmancer.Projectiles
                 Vector2 direction = (targetCenter - Projectile.Center);
                 Vector2 initialPosition = Projectile.Center;
 
+                targetLocation = targetCenter;
                 // Calculates initial position.
                 // The projectile will either shoot at the chamber of the gun or from the center.
                 if (direction.X > 0f)
@@ -404,7 +408,7 @@ namespace Bowmancer.Projectiles
             return chosenAmmo;
         }
 
-        private Vector2 calculateVelocity(float shootSpeed, Vector2 displacement, bool isProjectileMotion)
+        protected Vector2 calculateVelocity(float shootSpeed, Vector2 displacement, bool isProjectileMotion)
         {
             // Check if ammo is projectile motion.
             // If isGun evalutes to true, the motion is straight and not projectile.
