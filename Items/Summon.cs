@@ -1,10 +1,11 @@
-﻿using Terraria;
+﻿    using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Bowmancer.Buffs;
 using Bowmancer.Projectiles;
+using System;
 
 namespace Bowmancer.Items
 {
@@ -40,9 +41,7 @@ namespace Bowmancer.Items
 
         public virtual void setStaticAttributes()
         {
-            string concat = "\n[c/a555d7:Special Ability]\n";
-
-            Tooltip.SetDefault(itemDescription + "\n" + "[c/" + abilityNameColor + ":" + abilityName + "]: " + abilityDescription); ;
+            // Tooltip.SetDefault(itemDescription + "\n" + "[c/" + abilityNameColor + ":" + abilityName + "]: " + abilityDescription); ;
         }
 
         public override void SetDefaults()
@@ -88,7 +87,8 @@ namespace Bowmancer.Items
             {
                 Dust.NewDust(position, 5, 5, DustID.YellowStarDust, Scale:1.2f);
             }
-            projectile.originalDamage = Item.damage;
+            projectile.originalDamage = (int)(Item.damage * (Math.Pow(0.95, player.ownedProjectileCounts[Item.shoot])));
+
 
             // Since we spawned the projectile manually already, we do not need the game to spawn it for ourselves anymore, so return false
             return false;

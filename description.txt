@@ -1,10 +1,8 @@
-[b][Currently up to Pre-hardmode Content][/b]
+[b][Currently starting to develop hardmode weapons.][/b]
 
-Latest Update: Clockwork Assault Rifle and Onyx Blaster added, item description revamp!
-v0.6.0.0:
-- Added clockwork assault rifle summon.
-- Added onyx blaster summon.
-- Revamp item names, descriptions, and ability descriptions.
+Latest Update: Ported to 1.4.4!
+v1.0.0.0:
+- Ported to 1.4.4, bugs are expected! Please be nice in reporting the bugs :3
 
 [h2] Description [/h2]
 
@@ -78,6 +76,9 @@ Sprites used are either directly from or a modified version of the official Terr
 
 
 [h3] Updates [/h3]:
+v1.0.0.0:
+- Ported to 1.4.4, bugs are expected!
+t
 v0.6.0.0:
 - Added clockwork assault rifle summon.
 - Added onyx blaster summon.
@@ -118,5 +119,3 @@ v0.3.1.0:
 - Added minishark and musket summon.
 - Weapons now rotate according to where they are shooting.
 - The price of the weapons are now the same as their ranged counterparts.
-[quote=tModLoader]Developed By Taylor[/quote]
-[quote=tModLoader]Developed By Taylor[/quote]
