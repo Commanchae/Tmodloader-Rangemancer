@@ -46,6 +46,7 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
         protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
+            // Normalized as it is not affected by other factors, only the gun's shootSpeed.
             normalizedShootVel = shootVel;
             normalizedShootVel.Normalize();
             normalizedShootVel *= shootSpeed;

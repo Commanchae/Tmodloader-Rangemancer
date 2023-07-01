@@ -90,7 +90,7 @@ namespace Bowmancer.Items
             {
                 Dust.NewDust(position, 5, 5, DustID.YellowStarDust, Scale:1.2f);
             }
-            projectile.originalDamage = (int)(Item.damage * (Math.Pow(0.95, player.ownedProjectileCounts[Item.shoot])));
+            projectile.originalDamage = (int)(Item.damage * (Math.Pow(0.93, player.ownedProjectileCounts[Item.shoot])));
 
             // Since we spawned the projectile manually already, we do not need the game to spawn it for ourselves anymore, so return false
             return false;

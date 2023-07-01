@@ -22,7 +22,7 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
         {
             buff = ModContent.BuffType<TestProjectileBuff>();
             shootSpeed = 6.1f;
-            shootCooldown = 30;
+            shootCooldown = 5;
             respectiveItem = new Item(ItemID.WoodenBow);
             shootFromCenter = true;
 
@@ -31,8 +31,9 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
 
         protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
         {
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-
+                var projectile = Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.WaterStream, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+            Player player = Main.player[Projectile.owner];
+            player.AddBuff(BuffID.Regeneration, 3600);
         }
     }
 }

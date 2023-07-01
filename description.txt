@@ -1,77 +1,88 @@
 P.S. Thanks for the support, everyone!
 
 [Currently starting to develop hardmode weapons.]
-(I will still keep 1.4.3 updated, at least until the main content is finished or 1.4.4 becomes stable)
-v1.1.0.0:
-- Added daedalus stormbow summon.
-- Introduced penalty mechanic where ranged summons of the same item will have a slight damage penalty (0.95 multiplier for each summon of the same item)
+Latest additions (v1.2.0.0): Megashark, Coin Gun, Palladium/Orichalcum/Titanium Repeaters
 
-Description
+[h2] Description [/h2]
 
 Summon an arsenal of ranged weapons!
 Have you ever thought about how awesome it would be if you could summon your beloved bows or guns as minions? Or ever struggled to decide between going for a Ranged or a Summoner class...or both?
 
 This is all possible with Rangemancer.
 
-With Rangemancer, you have the ability to enchant certain ranged weapons, coverting them to their summoning counterpart, allowing you to summon them to fight alongside you.
+With Rangemancer, you have the ability to convert certain ranged weapons to their summoning counterpart, allowing you to summon them to fight alongside you.
 
-Main features
+[h2] Main Features [/h2]
 1. You can convert certain bows and guns to their summoning counterparts.
 2. The weapons will consume the ammo in your inventory. (Bows that have special effects from using wooden arrows will retain their effects (some effects may not work correctly for now))
 3. Holding the respective summon item will allow that ranged weapon to use its special ability after a specific number of shots.
-4. Damage penalty for subsequent summons of the same item (Thanks Hiya Papaya!). Ex. If you summon 1 wooden bow and 1 platinum bow, they will both have 100% of their original damage. But if you suummon 2 wooden bows, the first one will have 100% of their original damage, the second would have 95%. Each subsequent summon would be 95% of the previous summon.
+4. Damage penalty for subsequent summons of the same item (Thanks Hiya Papaya!). Ex. If you summon 1 wooden bow and 1 platinum bow, they will both have 100% of their original damage. But if you summon 2 wooden bows, the first one will have 100% of their original damage, the second would have 95%. Each subsequent summon would be 95% of the previous summon.
 
 
 There are currently 20 weapons (17 pre-hardmode, 3 hardmode) available:
 
-Bows
-1. Enchanted Wooden Bow (1 x Wooden Bow + 3 x Fallen Star @ Workbench)
-2. Enchanted Gold Bow (1 x Gold Bow + 3 x Fallen Star @ Workbench)
-3. Enchanted Tendon Bow (1 x Tendon Bow / Demon Bow + 3 x Fallen Star @ Workbench)
-4. Enchanted Bee's Knees (1 x The Bee's Knees + 3 x Fallen Star @ Workbench)
-5. Enchanted Molten Fury (1 x Molten Fury + 3 x Fallen Star @ Workbench)
-6. Enchanted Boreal Bow (1 x Boreal Bow + 3 x Fallen Star @ Workbench)
-7. Enchanted Demon Bow (1 x Demon Bow + 3 x Fallen Star @ Workbench)
-8. Enchanted Platinum Bow (1 x Platinum Bow + 3 x Fallen Star @ Workbench)
-9. Enchanted Daedalus Stormbow
+[h2] Available Weapons [/h2]
+[h3] Pre-hardmode [/h3]
+[b] Bows [/b]
+- Enchanted Wooden Bow (1 x Wooden Bow + 3 x Fallen Star @ Workbench)
+- Enchanted Gold Bow (1 x Gold Bow + 3 x Fallen Star @ Workbench)
+- Enchanted Tendon Bow (1 x Tendon Bow / Demon Bow + 3 x Fallen Star @ Workbench)
+- Enchanted Bee's Knees (1 x The Bee's Knees + 3 x Fallen Star @ Workbench)
+- Enchanted Molten Fury (1 x Molten Fury + 3 x Fallen Star @ Workbench)
+- Enchanted Boreal Bow (1 x Boreal Bow + 3 x Fallen Star @ Workbench)
+- Enchanted Demon Bow (1 x Demon Bow + 3 x Fallen Star @ Workbench)
+- Enchanted Platinum Bow (1 x Platinum Bow + 3 x Fallen Star @ Workbench)
 
-Guns
-1. Enchanted Flintlock Pistol (1 x Flintlock Pistol + 3 x Fallen Star @ Workbench)
-2. Enchanted Minishark (1 x Minishark + 3 x Fallen Star @ Workbench)
-3. Enchanted Musket (1 x Musket + 3 x Fallen Star @ Workbench)
-4. Enchanted Boomstick (1 x Boomstick + 3 x Fallen Star @ Workbench)
-5. Enchanted Snowball Cannon (1 x Snowball Cannon + 3 x Fallen Star @ Workbench)
-6. Enchanted Undertaker (1 x The Undertaker + 3 x Fallen Star @ Workbench)
-7. Enchanted Blowpipe (1 x Blowpipe + 3 x Fallen Star @ Workbench)
-8. Enchanted Clockwork Assault Rifle (1 x Clockwork Assault Rifle + 3 x Fallen Star @ Workbench)
-9. Enchanted Onyx Blaster (1 x Onyx Blaster+ 3 x Fallen Star @ Workbench)
+[b] Guns [/b]
+- Enchanted Flintlock Pistol (1 x Flintlock Pistol + 3 x Fallen Star @ Workbench)
+- Enchanted Minishark (1 x Minishark + 3 x Fallen Star @ Workbench)
+- Enchanted Musket (1 x Musket + 3 x Fallen Star @ Workbench)
+- Enchanted Boomstick (1 x Boomstick + 3 x Fallen Star @ Workbench)
+- Enchanted Snowball Cannon (1 x Snowball Cannon + 3 x Fallen Star @ Workbench)
+- Enchanted Undertaker (1 x The Undertaker + 3 x Fallen Star @ Workbench)
+- Enchanted Blowpipe (1 x Blowpipe + 3 x Fallen Star @ Workbench)
 
-Miscellaneous
-1. Enchanted Grenade (1 x Grenade + 3 x Fallen Star @ Workbench) (Consumes grenades (50% consumption rate))
-2. Enchanted Shuriken (1 x Shuriken + 3 x Fallen Star @ Workbench) (Consumes shurikens (35% consumption rate))
+[b] Miscellaneous [/b]
+- Enchanted Grenade (1 x Grenade + 3 x Fallen Star @ Workbench) (Consumes grenades (50% consumption rate))
+- Enchanted Shuriken (1 x Shuriken + 3 x Fallen Star @ Workbench) (Consumes shurikens (35% consumption rate))
 
-Notes
+[h3] Hardmode [/h3]
+[b] Bows [/b]
+- Enchanted Daedalus Stormbow
+- Enchanted Orichalcum Repeater
+- Enchanted Palladium Repeater
+- Enchanted Titanium Repeater
+
+[b] Guns [/b]
+- Enchanted Clockwork Assault Rifle (1 x Clockwork Assault Rifle + 3 x Fallen Star @ Workbench)
+- Enchanted Onyx Blaster (1 x Onyx Blaster+ 3 x Fallen Star @ Workbench)
+- Enchanted Megashark
+- Enchanted Coin Gun
+
+[h2] Notes [/h2]
 1. This mod is a simply a passion project. I'll only work on it when I can.
 2. I have not tested this with other mods, therefore I won't be able to guarantee mod compatibility.
 3. The ammo only interacts correctly with the Endless Quiver/MusketPouch and not accessories like Magic Quiver, etc.
 
-Known Bugs
-- A bug currently exists where bows may randomly disappear.
+[h2] Known Bugs [/h2]
+- A bug currently exists where summons may randomly disappear.
 
-Plans for Next Update:
-- Either continue creating hardmode weapons or start porting to 1.4.4.
-- More exclusive abilities for other weapons.
+[h2] To be implemented: [/h2]
+- Enchanted Megashark
+- Enchanted Coin Gun
+- Enchanted Palladium Repeater 
+- Enchanted Orichalcum Repeater
+- Enchanted Titanium Repeater
+- Enchanted Hallowed Repeater
+- Enchanted Ice Bow
+- Enchanted Pulse Bow
+- More planned.
 
-Future Plans
-1. More weapons.
-2. Potentially other types of weapons (magic).
-3. More unique abilities.
 
-
-Important: Feedback will be greatly appreciated, but please be nice :3
+[h2] Important: Feedback will be greatly appreciated, but please be nice :3 [/h2]
 Please kindly report any bugs as well!
 
-Credits
+[h2] Credits [/h2]
 
 Code modified/inspired from (much thanks!):
 [1] https://github.com/tModLoader/tModLoader/wiki/Basic-Minion-Guide
@@ -79,7 +90,16 @@ Code modified/inspired from (much thanks!):
 
 Sprites used are either directly from or a modified version of the official Terraria sprites.
 
-Updates
+[h2] Updates [/h2]
+v1.2.0.0 (1.4.3):
+- Added megashark summon.
+- Added coin gun summon.
+- Added palladium, orichalcum, and titanium repeater summons.
+- Adjusted penalty from 95% of original damage to 93% of original damage. (Nerf)
+
+v1.1.0.1:
+- Update patch for 1.4.4 version
+
 v1.1.0.0:
 - Added daedalus stormbow summon.
 - Introduced penalty mechanic where ranged summons of the same item will have a slight damage penalty (0.95 multiplier for each summon of the same item)
@@ -127,3 +147,4 @@ v0.3.1.0:
 - Added minishark and musket summon.
 - Weapons now rotate according to where they are shooting.
 - The price of the weapons are now the same as their ranged counterparts.
+[quote=tModLoader]Developed By Taylor[/quote]

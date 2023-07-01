@@ -25,7 +25,7 @@ namespace Bowmancer.Items.Bows
 
             // TooltipLine description = new TooltipLine(this.Mod, "Tooltip1",  );
             itemDescription = "Summons an enchanted [c/adcdff:daedalus stormbow] to fight for you!";
-            abilityDescription = "Shoots an extra projectile for every stack of aerial blessing. \n1 stack gained for every 20 shots. (Max 4 stacks)";
+            abilityDescription = "Gain a stack of aerial blessing every 20 shots for a maximum of 4 stacks.\nShoots an extra projectile for every stack of aerial blessing.\nSwitching to another weapon removes all stacks.";
             abilityNameColor = "6ba4ff";
             abilityName = "Aerial Blessing";
 

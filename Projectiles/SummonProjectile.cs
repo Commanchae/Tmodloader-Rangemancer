@@ -43,6 +43,7 @@ namespace Bowmancer.Projectiles
 
 
         protected Vector2 targetLocation = Vector2.Zero;
+        protected NPC targetEnemy = null;
 
         protected bool consumeAmmoItem = true;
 
@@ -210,6 +211,7 @@ namespace Bowmancer.Projectiles
                     distanceFromTarget = between;
                     targetCenter = npc.Center;
                     foundTarget = true;
+                    targetEnemy = npc;
                 }
             }
 
