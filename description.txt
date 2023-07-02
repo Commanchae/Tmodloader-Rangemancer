@@ -1,7 +1,10 @@
 P.S. Thanks for the support, everyone!
 
 [Currently starting to develop hardmode weapons.]
-Latest additions (v1.2.0.0): Megashark, Coin Gun, Palladium/Orichalcum/Titanium Repeaters
+Latest additions (v1.3.0.0): 
+- Mythril Repeater (Ability: Occultic Dash)
+- Adamantite Repeater (Ability: Wrathful Honor (Buff))
+- Cobalt Repeater (Ability: Ninja's Aramaments)
 
 [h2] Description [/h2]
 
@@ -19,7 +22,7 @@ With Rangemancer, you have the ability to convert certain ranged weapons to thei
 4. Damage penalty for subsequent summons of the same item (Thanks Hiya Papaya!). Ex. If you summon 1 wooden bow and 1 platinum bow, they will both have 100% of their original damage. But if you summon 2 wooden bows, the first one will have 100% of their original damage, the second would have 95%. Each subsequent summon would be 95% of the previous summon.
 
 
-There are currently 20 weapons (17 pre-hardmode, 3 hardmode) available:
+There are currently 28 weapons available:
 
 [h2] Available Weapons [/h2]
 [h3] Pre-hardmode [/h3]
@@ -50,8 +53,12 @@ There are currently 20 weapons (17 pre-hardmode, 3 hardmode) available:
 [b] Bows [/b]
 - Enchanted Daedalus Stormbow
 - Enchanted Orichalcum Repeater
+- Enchanted Mythril Repeater
 - Enchanted Palladium Repeater
+- Enchanted Cobalt Repeater
 - Enchanted Titanium Repeater
+- Enchanted Adamantite Repeater
+
 
 [b] Guns [/b]
 - Enchanted Clockwork Assault Rifle (1 x Clockwork Assault Rifle + 3 x Fallen Star @ Workbench)
@@ -68,11 +75,6 @@ There are currently 20 weapons (17 pre-hardmode, 3 hardmode) available:
 - A bug currently exists where summons may randomly disappear.
 
 [h2] To be implemented: [/h2]
-- Enchanted Megashark
-- Enchanted Coin Gun
-- Enchanted Palladium Repeater 
-- Enchanted Orichalcum Repeater
-- Enchanted Titanium Repeater
 - Enchanted Hallowed Repeater
 - Enchanted Ice Bow
 - Enchanted Pulse Bow
@@ -91,6 +93,12 @@ Code modified/inspired from (much thanks!):
 Sprites used are either directly from or a modified version of the official Terraria sprites.
 
 [h2] Updates [/h2]
+v1.3.0.0:
+- Added adamantite, cobalt, and mythril repeater summons.
+
+v1.2.0.1 (1.4.4):
+- Patch for 1.4.4
+
 v1.2.0.0 (1.4.3):
 - Added megashark summon.
 - Added coin gun summon.
@@ -147,4 +155,3 @@ v0.3.1.0:
 - Added minishark and musket summon.
 - Weapons now rotate according to where they are shooting.
 - The price of the weapons are now the same as their ranged counterparts.
-[quote=tModLoader]Developed By Taylor[/quote]
