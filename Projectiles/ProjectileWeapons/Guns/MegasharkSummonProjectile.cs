@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria.Audio;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -12,7 +13,6 @@ using Bowmancer.Buffs;
 using System.Collections.Specialized;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using Bowmancer.Items.Guns;
-using IL.Terraria.Audio;
 
 namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
 {

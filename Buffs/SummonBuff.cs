@@ -3,7 +3,6 @@ using Terraria;
 using Bowmancer.Projectiles;
 using Ionic.Zip;
 
-// This class DOES NOT WORK currently.
 namespace Bowmancer.Buffs
 {
     public abstract class SummonBuff : ModBuff

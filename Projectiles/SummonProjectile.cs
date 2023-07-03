@@ -500,7 +500,10 @@ namespace Bowmancer.Projectiles
                 }
                 Vector2 velocity = calculateVelocity(shootSpeed + chosenAmmo.shootSpeed, displacement, isProjectileMotion);
                 shoot(chosenAmmo, initialPosition, velocity);
-                consumeAmmo(chosenAmmo.type);
+                if (chosenAmmo.consumable)
+                {
+                    consumeAmmo(chosenAmmo.type);
+                }
             }
 
         }

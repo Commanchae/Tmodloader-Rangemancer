@@ -1,7 +1,11 @@
 P.S. Thanks for the support, everyone!
 
 [Currently starting to develop hardmode weapons.]
-Latest additions (v1.3.0.0): 
+Latest additions 
+(v1.3.1.0):
+- Hallowed repeater (Holy)
+
+(v1.3.0.0): 
 - Mythril Repeater (Ability: Occultic Dash)
 - Adamantite Repeater (Ability: Wrathful Honor (Buff))
 - Cobalt Repeater (Ability: Ninja's Aramaments)
@@ -22,7 +26,7 @@ With Rangemancer, you have the ability to convert certain ranged weapons to thei
 4. Damage penalty for subsequent summons of the same item (Thanks Hiya Papaya!). Ex. If you summon 1 wooden bow and 1 platinum bow, they will both have 100% of their original damage. But if you summon 2 wooden bows, the first one will have 100% of their original damage, the second would have 95%. Each subsequent summon would be 95% of the previous summon.
 
 
-There are currently 28 weapons available:
+There are currently 29 weapons available:
 
 [h2] Available Weapons [/h2]
 [h3] Pre-hardmode [/h3]
@@ -58,6 +62,7 @@ There are currently 28 weapons available:
 - Enchanted Cobalt Repeater
 - Enchanted Titanium Repeater
 - Enchanted Adamantite Repeater
+- Enchanted Hallowed Repeater
 
 
 [b] Guns [/b]
@@ -75,7 +80,6 @@ There are currently 28 weapons available:
 - A bug currently exists where summons may randomly disappear.
 
 [h2] To be implemented: [/h2]
-- Enchanted Hallowed Repeater
 - Enchanted Ice Bow
 - Enchanted Pulse Bow
 - More planned.
@@ -93,7 +97,21 @@ Code modified/inspired from (much thanks!):
 Sprites used are either directly from or a modified version of the official Terraria sprites.
 
 [h2] Updates [/h2]
-v1.3.0.0:
+v1.3.1.0:
+- Added hallowed repeater.
+- Added icon to project (can be used to add localization files with Replace String mod).
+
+
+v1.3.0.5:
+- 1.4.4 patch.
+
+v1.3.0.4:
+- Publishing issue.
+
+v1.3.0.3:
+- The weapons should now be using endless ammo from other mods correctly.
+
+v1.3.0.0 & v1.3.0.1 (1.4.4 patch):
 - Added adamantite, cobalt, and mythril repeater summons.
 
 v1.2.0.1 (1.4.4):
