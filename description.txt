@@ -1,14 +1,11 @@
 P.S. Thanks for the support, everyone!
 
 [Currently starting to develop hardmode weapons.]
-Latest additions 
-(v1.3.1.0):
-- Hallowed repeater (Holy)
-
-(v1.3.0.0): 
-- Mythril Repeater (Ability: Occultic Dash)
-- Adamantite Repeater (Ability: Wrathful Honor (Buff))
-- Cobalt Repeater (Ability: Ninja's Aramaments)
+Latest additions:
+- Ice Bow (Ability: Snowflake)
+- Marrow (Ability: Bone Shatter)
+- Shadowflame Bow (Ability: Shadowflame Edge)
+- Damage calculation now takes into account the ammo's damage. (Weapons now do more damage).
 
 [h2] Description [/h2]
 
@@ -26,7 +23,7 @@ With Rangemancer, you have the ability to convert certain ranged weapons to thei
 4. Damage penalty for subsequent summons of the same item (Thanks Hiya Papaya!). Ex. If you summon 1 wooden bow and 1 platinum bow, they will both have 100% of their original damage. But if you summon 2 wooden bows, the first one will have 100% of their original damage, the second would have 95%. Each subsequent summon would be 95% of the previous summon.
 
 
-There are currently 29 weapons available:
+There are currently 32 weapons available:
 
 [h2] Available Weapons [/h2]
 [h3] Pre-hardmode [/h3]
@@ -63,6 +60,9 @@ There are currently 29 weapons available:
 - Enchanted Titanium Repeater
 - Enchanted Adamantite Repeater
 - Enchanted Hallowed Repeater
+- Enchanted Ice Bow
+- Enchanted Marrow
+- Enchanted Shadowflame Bow
 
 
 [b] Guns [/b]
@@ -75,13 +75,17 @@ There are currently 29 weapons available:
 1. This mod is a simply a passion project. I'll only work on it when I can.
 2. I have not tested this with other mods, therefore I won't be able to guarantee mod compatibility.
 3. The ammo only interacts correctly with the Endless Quiver/MusketPouch and not accessories like Magic Quiver, etc.
+4. I have not tested this with multiplayer, won't be able to guarantee compatibility at the moment.
 
 [h2] Known Bugs [/h2]
 - A bug currently exists where summons may randomly disappear.
 
 [h2] To be implemented: [/h2]
-- Enchanted Ice Bow
 - Enchanted Pulse Bow
+- Enchanted Vortex Beater
+- Enchanted Phantasm
+- Enchanted Tsunami
+- Damage nerf.
 - More planned.
 
 
@@ -97,10 +101,15 @@ Code modified/inspired from (much thanks!):
 Sprites used are either directly from or a modified version of the official Terraria sprites.
 
 [h2] Updates [/h2]
+v1.4.0.0:
+- Fixed mod not showing up in Replace String mod for localization.
+- Added ice bow, marrow, and shadowflame bow summon.
+- Fixed ammo damage not being used to calculate final damage (weapons are now more op, might introduce a nerf soon).
+
+
 v1.3.1.0:
 - Added hallowed repeater.
 - Added icon to project (can be used to add localization files with Replace String mod).
-
 
 v1.3.0.5:
 - 1.4.4 patch.

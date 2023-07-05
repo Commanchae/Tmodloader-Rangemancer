@@ -40,13 +40,13 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
             specialSound = SoundID.Item13;
         }
 
-        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel, int damage)
         {
             // Add some sound effects.
             Item heldItem = Main.player[Projectile.owner].HeldItem;
 
             // Shoots normal bullet with 2 degree random rotation.
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(2)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(2)), chosenAmmo.shoot, damage, Projectile.knockBack, Main.myPlayer);
             
             // Plays normal shootingSound.
             Terraria.Audio.SoundEngine.PlaySound(shootSound);

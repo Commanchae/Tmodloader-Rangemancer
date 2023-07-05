@@ -36,7 +36,7 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Misc
 
         }
 
-        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel, int damage)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
             if (heldItem.ModItem is ShurikenSummon)

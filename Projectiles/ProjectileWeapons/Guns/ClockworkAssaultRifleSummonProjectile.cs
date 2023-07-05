@@ -45,11 +45,11 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
  
         }
 
-        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel, int damage)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
 
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, damage, Projectile.knockBack, Main.myPlayer);
             if (bursting)
             {
                 burstCounter++;
@@ -87,8 +87,8 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
 
                 if (specialShotCounter >= specialShotCooldown)
                 {
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedBy(MathHelper.ToRadians(5)), chosenAmmo.shoot, (int)(Projectile.damage * 0.30), Projectile.knockBack, Main.myPlayer);
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedBy(MathHelper.ToRadians(-5)), chosenAmmo.shoot, (int) (Projectile.damage * 0.30), Projectile.knockBack, Main.myPlayer);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedBy(MathHelper.ToRadians(5)), chosenAmmo.shoot, (int)(damage * 0.30), Projectile.knockBack, Main.myPlayer);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedBy(MathHelper.ToRadians(-5)), chosenAmmo.shoot, (int) (damage * 0.30), Projectile.knockBack, Main.myPlayer);
 
                 }
             }

@@ -41,11 +41,11 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
  
         }
 
-        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel, int damage)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
 
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, chosenAmmo.damage, Projectile.knockBack, Main.myPlayer);
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, damage, Projectile.knockBack, Main.myPlayer);
             Terraria.Audio.SoundEngine.PlaySound(shootSound);
             if (heldItem.ModItem is CoinGunSummon)
             {

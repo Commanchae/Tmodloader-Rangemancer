@@ -13,6 +13,7 @@ using Bowmancer.Buffs;
 using System.Collections.Specialized;
 using Bowmancer.Items;
 using Bowmancer.Items.Bows;
+using Bowmancer.Projectiles.MiscProjectiles;
 
 namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
 {
@@ -26,14 +27,17 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
             respectiveItem = new Item(ItemID.WoodenBow);
             shootFromCenter = true;
 
+            Projectile.width = 16;
+            Projectile.height = 32;
+
         }
 
 
-        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel, int damage)
         {
-                var projectile = Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.WaterStream, Projectile.damage, Projectile.knockBack, Main.myPlayer);
-            Player player = Main.player[Projectile.owner];
-            player.AddBuff(BuffID.Regeneration, 3600);
+            var projectile = Projectile.NewProjectileDirect(Projectile.GetSource_FromThis(), position, shootVel, ModContent.ProjectileType<FairyQueenProjectile>(), Projectile.damage + chosenAmmo.damage, Projectile.knockBack, Main.myPlayer);
         }
+
+
     }
 }

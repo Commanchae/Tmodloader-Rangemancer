@@ -385,7 +385,7 @@ namespace Bowmancer.Projectiles
 
 
         public abstract void setAttributes();
-        protected abstract void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel);
+        protected abstract void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel, int damage);
 
         private Item chooseAmmo()
         {
@@ -499,7 +499,9 @@ namespace Bowmancer.Projectiles
                     isProjectileMotion = true;
                 }
                 Vector2 velocity = calculateVelocity(shootSpeed + chosenAmmo.shootSpeed, displacement, isProjectileMotion);
-                shoot(chosenAmmo, initialPosition, velocity);
+                int damage = Projectile.damage + chosenAmmo.damage;
+
+                shoot(chosenAmmo, initialPosition, velocity, damage);
                 if (chosenAmmo.consumable)
                 {
                     consumeAmmo(chosenAmmo.type);

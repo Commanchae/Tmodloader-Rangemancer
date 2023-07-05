@@ -45,7 +45,7 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
 
 
         }
-        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel, int damage)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
 
@@ -53,12 +53,12 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
             if (chosenAmmo.shoot != 1)
             {
 
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, damage, Projectile.knockBack, Main.myPlayer);
                 Terraria.Audio.SoundEngine.PlaySound(shootSound);
             }
             else
             {
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.BeeArrow, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, ProjectileID.BeeArrow, damage, Projectile.knockBack, Main.myPlayer);
                 Terraria.Audio.SoundEngine.PlaySound(SoundID.Item97);
             }
             if (heldItem.Name.Equals(itemName))
@@ -84,7 +84,7 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
             else
             {
                 specialShotCounter = 0;
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel, chosenAmmo.shoot, damage, Projectile.knockBack, Main.myPlayer);
                 Terraria.Audio.SoundEngine.PlaySound(shootSound);
             }
         }

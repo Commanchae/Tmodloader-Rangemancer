@@ -44,7 +44,7 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
 
 
         }
-        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel, int damage)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
             int numberOfProjectiles = 3 + rand.Next(0, 2) + numberOfSpecialProjectiles;
@@ -67,7 +67,7 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Bows
                 // Calculate for rotation.
                 calculateVelocity(1, shootVel, false);
                     
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), arrow1_start, arrow1_velocity, chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), arrow1_start, arrow1_velocity, chosenAmmo.shoot, damage, Projectile.knockBack, Main.myPlayer);
             
             }
             Terraria.Audio.SoundEngine.PlaySound(shootSound);

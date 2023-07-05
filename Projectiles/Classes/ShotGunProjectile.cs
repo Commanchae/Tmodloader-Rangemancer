@@ -24,7 +24,7 @@ namespace Bowmancer.Projectiles
         protected int specialSpread = 60;
         protected int dustID = DustID.Torch;
 
-        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel, int damage)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
 
@@ -43,7 +43,7 @@ namespace Bowmancer.Projectiles
                 }
                 for (int i = 0; i < spreadCount * specialShotMultiplier; i++)
                 {
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(specialSpread)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(specialSpread)), chosenAmmo.shoot, damage, Projectile.knockBack, Main.myPlayer);
 
                 }
                 Terraria.Audio.SoundEngine.PlaySound(shootSound);
@@ -54,7 +54,7 @@ namespace Bowmancer.Projectiles
                 specialShotCounter = 0;
                 for (int i = 0; i < spreadCount; i++)
                 {
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(degreesSpread)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(degreesSpread)), chosenAmmo.shoot, damage, Projectile.knockBack, Main.myPlayer);
 
                 }
                 Terraria.Audio.SoundEngine.PlaySound(shootSound);

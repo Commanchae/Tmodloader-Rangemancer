@@ -43,7 +43,7 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
  
         }
 
-        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel)
+        protected override void shoot(Item chosenAmmo, Vector2 position, Vector2 shootVel, int damage)
         {
             Item heldItem = Main.player[Projectile.owner].HeldItem;
             // Normalized as it is not affected by other factors, only the gun's shootSpeed.
@@ -52,7 +52,7 @@ namespace Bowmancer.Projectiles.ProjectileWeapons.Guns
             normalizedShootVel *= shootSpeed;
             for (int i = 0; i < 4; i++)
             {
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(10)), chosenAmmo.shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, shootVel.RotatedByRandom(MathHelper.ToRadians(10)), chosenAmmo.shoot, damage, Projectile.knockBack, Main.myPlayer);
             }
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, normalizedShootVel, ProjectileID.BlackBolt, Projectile.damage, Projectile.knockBack, Main.myPlayer);
 
