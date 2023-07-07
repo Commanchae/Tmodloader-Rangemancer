@@ -29,7 +29,7 @@ namespace Bowmancer.Projectiles.MiscProjectiles
         }
 
         public override void AI(Projectile projectile)
-        {
+        {   
         }
 
 

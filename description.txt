@@ -1,11 +1,10 @@
-P.S. Thanks for the support, everyone!
-
 [Currently starting to develop hardmode weapons.]
 Latest additions:
-- Ice Bow (Ability: Snowflake)
-- Marrow (Ability: Bone Shatter)
-- Shadowflame Bow (Ability: Shadowflame Edge)
-- Damage calculation now takes into account the ammo's damage. (Weapons now do more damage).
+- Enchanted flamethrower (Ability: Cursed Flamethrower)
+- Enchanted Pulse Bow (Ability: Faulty Conversion)
+- Enchanted Aerial Bane (Ability: Justice from Above)
+- Enchanted Phantom Phoenix (Ability: Fiery Flock)
+
 
 [h2] Description [/h2]
 
@@ -23,7 +22,7 @@ With Rangemancer, you have the ability to convert certain ranged weapons to thei
 4. Damage penalty for subsequent summons of the same item (Thanks Hiya Papaya!). Ex. If you summon 1 wooden bow and 1 platinum bow, they will both have 100% of their original damage. But if you summon 2 wooden bows, the first one will have 100% of their original damage, the second would have 95%. Each subsequent summon would be 95% of the previous summon.
 
 
-There are currently 32 weapons available:
+There are currently 36 weapons available:
 
 [h2] Available Weapons [/h2]
 [h3] Pre-hardmode [/h3]
@@ -63,6 +62,9 @@ There are currently 32 weapons available:
 - Enchanted Ice Bow
 - Enchanted Marrow
 - Enchanted Shadowflame Bow
+- Enchanted Pulse Bow
+- Enchanted Phantom Phoenix
+- Enchanted Aerial Bane
 
 
 [b] Guns [/b]
@@ -70,6 +72,7 @@ There are currently 32 weapons available:
 - Enchanted Onyx Blaster (1 x Onyx Blaster+ 3 x Fallen Star @ Workbench)
 - Enchanted Megashark
 - Enchanted Coin Gun
+- Enchanted Flamethrower
 
 [h2] Notes [/h2]
 1. This mod is a simply a passion project. I'll only work on it when I can.
@@ -81,10 +84,8 @@ There are currently 32 weapons available:
 - A bug currently exists where summons may randomly disappear.
 
 [h2] To be implemented: [/h2]
-- Enchanted Pulse Bow
 - Enchanted Vortex Beater
 - Enchanted Phantasm
-- Enchanted Tsunami
 - Damage nerf.
 - More planned.
 
@@ -101,6 +102,12 @@ Code modified/inspired from (much thanks!):
 Sprites used are either directly from or a modified version of the official Terraria sprites.
 
 [h2] Updates [/h2]
+v1.5.0.0:
+- Added phantom phoenix summon, pulse bow, aerial bane, and flamethrower summon.
+
+v1.4.0.1:
+- 1.4.4 patch
+
 v1.4.0.0:
 - Fixed mod not showing up in Replace String mod for localization.
 - Added ice bow, marrow, and shadowflame bow summon.
@@ -182,3 +189,5 @@ v0.3.1.0:
 - Added minishark and musket summon.
 - Weapons now rotate according to where they are shooting.
 - The price of the weapons are now the same as their ranged counterparts.
+
+P.S. Thanks for the support, everyone!
