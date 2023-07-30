@@ -1,0 +1,576 @@
+Mods: {
+	Bowmancer: {
+		Buffs: {
+			AdamantiteRepeaterSummonBuff: {
+				DisplayName: Adamantite Repeater
+				Description: The adamantite repeater will fight for you!
+			}
+
+			AerialBaneSummonBuff: {
+				DisplayName: Aerial Bane
+				Description: The aerial bane will fight for you!
+			}
+
+			BeeBowSummonBuff: {
+				DisplayName: The Bee's Knees
+				Description: The Bee's Knees will fight for you!
+			}
+
+			BlowpipeSummonBuff: {
+				DisplayName: Blowpipe
+				Description: The blowpipe will fight for you!
+			}
+
+			BoomstickSummonBuff: {
+				DisplayName: Boomstick
+				Description: The boomstick will fight for you!
+			}
+
+			BorealBowSummonBuff: {
+				DisplayName: Boreal Bow
+				Description: This boreal bow will fight for you!
+			}
+
+			ClockworkAssaultRifleSummonBuff: {
+				DisplayName: Clockwork Assault Rifle
+				Description: The clockwork assault rifle will fight for you!
+			}
+
+			CobaltRepeaterSummonBuff: {
+				DisplayName: Cobalt Repeater
+				Description: The cobalt repeater will fight for you!
+			}
+
+			CoinGunSummonBuff: {
+				DisplayName: Coin Gun
+				Description: The coin gun will fight for you!
+			}
+
+			DaedalusSummonBuff: {
+				DisplayName: Daedalus Stormbow
+				Description: The daedalus stormbow will fight for you!
+			}
+
+			DemonBowSummonBuff: {
+				DisplayName: Demon Bow
+				Description: This demon bow will fight for you!
+			}
+
+			FlamethrowerSummonBuff: {
+				DisplayName: Flamethrower
+				Description: The flamethrower will fight for you!
+			}
+
+			FlintlockPistolSummonBuff: {
+				DisplayName: Flintlock Pistol
+				Description: The flintlock pistol will fight for you!
+			}
+
+			GoldBowSummonBuff: {
+				DisplayName: Gold Bow
+				Description: This gold bow will fight for you!
+			}
+
+			GrenadeSummonBuff: {
+				DisplayName: Grenade
+				Description: The grenade will send its friends to fight for you!
+			}
+
+			HallowedRepeaterSummonBuff: {
+				DisplayName: Hallowed Repeater
+				Description: The hallowed repeater will fight for you!
+			}
+
+			IceBowSummonBuff: {
+				DisplayName: Ice Bow
+				Description: The ice bow will fight for you!
+			}
+
+			MarrowSummonBuff: {
+				DisplayName: Marrow
+				Description: The marrow will fight for you!
+			}
+
+			MegasharkSummonBuff: {
+				DisplayName: Megashark
+				Description: The megashark will fight for you!
+			}
+
+			MinisharkSummonBuff: {
+				DisplayName: Minishark
+				Description: The minishark will fight for you!
+			}
+
+			MoltenFurySummonBuff: {
+				DisplayName: Molten Fury
+				Description: This molten fury will fight for you!
+			}
+
+			MusketSummonBuff: {
+				DisplayName: Musket
+				Description: The musket will fight for you!
+			}
+
+			MythrilRepeaterSummonBuff: {
+				DisplayName: Mythril Repeater
+				Description: The mythril repeater will fight for you!
+			}
+
+			OnyxBlasterSummonBuff: {
+				DisplayName: Onyx Blaster
+				Description: The onyx blaster will CONQUER YOUR ENEMIES!
+			}
+
+			OrichalcumRepeaterSummonBuff: {
+				DisplayName: Orichalcum Repeater
+				Description: The orichalcum repeater will fight for you!
+			}
+
+			PalladiumRepeaterSummonBuff: {
+				DisplayName: Palladium Repeater
+				Description: The palladium repeater will fight for you!
+			}
+
+			PhantomPhoenixSummonBuff: {
+				DisplayName: Phantom Phoenix
+				Description: The phantom phoenix will fight for you!
+			}
+
+			PlatinumBowSummonBuff: {
+				DisplayName: Platinum Bow
+				Description: This platinum bow will fight for you!
+			}
+
+			PulseBowSummonBuff: {
+				DisplayName: Pulse Bow
+				Description: The pulse bow will fight for you!
+			}
+
+			ShadowflameBowSummonBuff: {
+				DisplayName: Shadowflame Bow
+				Description: The shadowflame bow will fight for you!
+			}
+
+			ShurikenSummonBuff: {
+				DisplayName: Shuriken
+				Description: The shuriken will send its friends to fight for you!
+			}
+
+			SnowballCannonSummonBuff: {
+				DisplayName: Snowball Cannon
+				Description: The snowball cannon will fight for you!
+			}
+
+			TendonBowSummonBuff: {
+				DisplayName: Tendon Bow
+				Description: This tendon bow will fight for you!
+			}
+
+			TestProjectileBuff: {
+				DisplayName: Wooden Bow
+				Description: This wooden bow will fight for you!
+			}
+
+			TitaniumRepeaterSummonBuff: {
+				DisplayName: Titanium Repeater
+				Description: The titanium repeater will fight for you!
+			}
+
+			UndertakerSummonBuff: {
+				DisplayName: The Undertaker
+				Description: The undertaker will fight for you!
+			}
+
+			WoodenBowSummonBuff: {
+				DisplayName: Wooden Bow
+				Description: This wooden bow will fight for you!
+			}
+		}
+
+		Items: {
+			AdamantiteRepeaterSummon: {
+				DisplayName: Adamantite Repeater Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/d1003f:adamantite repeater] to fight for you!
+					[c/d1003f:Wrathful Honor (Buff)]: Buffs the player with Wrath for 3 seconds every 20th shot, boosting the damage of all weapons.
+					'''
+			}
+
+			AerialBaneSummon: {
+				DisplayName: Aerial Bane Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/882134:aerial bane] to fight for you!
+					[c/9c2400:Justice from Above]: Sends meteors from above crashing down every fifth shot.
+					'''
+			}
+
+			BeeBowSummon: {
+				DisplayName: Bee Bow Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/fac369:Bee's Knees] to fight for you!
+					[c/5ac85a:Venomous Barrage]: Shoots two stingers along with every third shot.
+					'''
+			}
+
+			BorealBowSummon: {
+				DisplayName: Boreal Bow Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/7D6437:boreal bow] to fight for you!
+					[c/c3f5fa:Frostbite Volley]: Shoots two snowballs with every third shot!
+					'''
+			}
+
+			CobaltRepeaterSummon: {
+				DisplayName: Cobalt Repeater Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/1c8eff:cobalt repeater] to fight for you!
+					[c/1c8eff:Ninja's Armaments]: Fires a random projectile every third shot.
+					'''
+			}
+
+			DaedalusSummon: {
+				DisplayName: Daedalus Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/adcdff:daedalus stormbow] to fight for you!
+					[c/6ba4ff:Aerial Blessing]: Gain a stack of aerial blessing every 20 shots for a maximum of 4 stacks.
+					Shoots an extra projectile for every stack of aerial blessing.
+					Switching to another weapon removes all stacks.
+					'''
+			}
+
+			DemonBowSummon: {
+				DisplayName: Demon Bow Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/8a2be2:demon bow] to fight for you!
+					[c/666999:Sinister Shot]: Shoots an unholy arrow every other shot.
+					'''
+			}
+
+			GoldBowSummon: {
+				DisplayName: Gold Bow Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/fac369:gold bow] to fight for you!
+					[c/f7f7f7:Jester's Gambit]: Shoots an arc of 3 jester arrows after every fifth shot.
+					'''
+			}
+
+			HallowedRepeaterSummon: {
+				DisplayName: Hallowed Repeater Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/ffe736:hallowed repeater] to fight for you!
+					[c/ffe736:Holy Shield (Buff)]: Grants the player brief invulnerability after every 50th shot.
+					'''
+			}
+
+			IceBowSummon: {
+				DisplayName: Ice Bow Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/8ab7ff:ice bow] to fight for you!
+					[c/8ab7ff:Snowflake]: Shoots between 1 to 5 snowflakes every fifth shot.
+					'''
+			}
+
+			MarrowSummon: {
+				DisplayName: Marrow Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/bfbfbf:marrow] to fight for you!
+					[c/bfbfbf:Bone Shatter]: Shoots between 2 - 10 bones in random directions every fifth shot, doing 25% damage each.
+					'''
+			}
+
+			MoltenFurySummon: {
+				DisplayName: Molten Fury Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/ea7a55:molten fury] to fight for you!
+					[c/FF4500:Inferno's Wrath]: Shoots a hellfire arrow after every third shot.
+					'''
+			}
+
+			MythrilRepeaterSummon: {
+				DisplayName: Mythril Repeater Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/46b0ae:mythril repeater] to fight for you!
+					[c/46b0ae:Occultic Dash]: Causes the player to dash in the direction the player is moving every 20 shots.
+					'''
+			}
+
+			OrichalcumRepeaterSummon: {
+				DisplayName: Orichalcum Repeater Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/ff4fea:orichalcum repeater] to fight for you!
+					[c/ff4fea:Blossom's Edge]: Fires an additional flower petal every third shot.
+					'''
+			}
+
+			PalladiumRepeaterSummon: {
+				DisplayName: Palladium Repeater Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/f27b52:palladium repeater] to fight for you!
+					[c/f27b52:Knight's Respite (Buff)]: Imbues the player with rapid healing every 20th shot.
+					'''
+			}
+
+			PhantomPhoenixSummon: {
+				DisplayName: Phantom Phoenix Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/ff9d00:phantom phoenix] to fight for you!
+					[c/ff2e54:Fiery Flock]: Shoots out a flock of phoenixes every seventh shot.
+					'''
+			}
+
+			PlatinumBowSummon: {
+				DisplayName: Platinum Bow Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/e5e4e2:platinum bow] to fight for you!
+					[c/C0C0C0:Explosive Arsenal]: Shoots a grenade after every five shots!
+					'''
+			}
+
+			PulseBowSummon: {
+				DisplayName: Pulse Bow Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/99ceff:pulse bow] to fight for you!
+					[c/ababab:Faulty Conversion]: After a random number of shots, shoots a normal arrow inplace of a pulse bolt.
+					'''
+			}
+
+			ShadowflameBowSummon: {
+				DisplayName: Shadowflame Bow Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/bb00ff:shadowflame bow] to fight for you!
+					[c/bb00ff:Shadowflame Edge]: Shoots two shadowflame knives every seventh shot.
+					'''
+			}
+
+			TendonBowSummon: {
+				DisplayName: Tendon Bow Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/cd4b4b:tendon bow] to fight for you!
+					[c/dc0600:Blood Barrage]: Shoots a blood arrow every other shot.
+					'''
+			}
+
+			TestSummon: {
+				DisplayName: Test Summon
+				Tooltip:
+					'''
+
+					[c/:]: 
+					'''
+			}
+
+			TitaniumRepeaterSummon: {
+				DisplayName: Titanium Repeater Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/a7a6a3:titanium repeater] to fight for you!
+					[c/a7a6a3:Triple Volley]: Fires two additional arrows every third shot.
+					'''
+			}
+
+			WoodenBowSummon: {
+				DisplayName: Wooden Bow Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/cd4b4b:wooden bow] to fight for you!
+					[c/8DB600:Seed Burst]: Shoots additional seeds every three shots.
+					'''
+			}
+
+			BlowpipeSummon: {
+				DisplayName: Blowpipe Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/2AF34D:blowpipe] to fight for you!
+					[c/FF5200:Multishot]: Shoots additional projectiles for two shots after every three shots.
+					'''
+			}
+
+			BoomstickSummon: {
+				DisplayName: Boomstick Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/2AF34D:boomstick] to fight for you!
+					[c/FF5200:Rapid Blitz]: Shoots additional bursts of projectiles every five shots.
+					'''
+			}
+
+			ClockworkAssaultRifleSummon: {
+				DisplayName: Clockwork Assault Rifle Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/FFE41E:clockwork assault rifle] to fight for you!
+					[c/FF5200:Hell's Barrage]: Shoots three streams of bullets after threshold reached.
+					'''
+			}
+
+			CoinGunSummon: {
+				DisplayName: Coin Gun Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/fbff00:coin gun] to fight for you!
+					[c/fdff69:The Curse of Midas]: After every ten shots, curses the target to drop more coins for 3 seconds.
+					'''
+			}
+
+			FlamethrowerSummon: {
+				DisplayName: Flamethrower Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/ff6a3d:flamethrower] to fight for you!
+					[c/00f018:Cursed Flamethrower]: Shoots out cursed flames after ability is activated.
+					Consumes a lot more gel than the standard flamethrower model.
+					'''
+			}
+
+			FlintlockPistolSummon: {
+				DisplayName: Flintlock Pistol Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/B0B0B0:flintlock pistol] to fight for you!
+					[c/B0B0B0:Quickdraw]: Shoots additional bullets every fifth shot.
+					'''
+			}
+
+			MegasharkSummon: {
+				DisplayName: Megashark Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/4262ff:megashark] to fight for you!
+					55% chance to not consume ammo
+					[c/1940ff:Hydrostorm]: Gain a stack of hydrostorm every 43 shots for a maximum of 4 stacks. 
+					Shoots an additional stream of water for each stack of hydrostorm.
+					Switching to another weapon removes all stacks.
+					'''
+			}
+
+			MinisharkSummon: {
+				DisplayName: Minishark Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/B0B0B0:minishark] to fight for you!
+					33% chance to not consume ammo
+					[c/B0B0B0:Multishot]: Shoots additional bullets every 20th shot.
+					'''
+			}
+
+			MusketSummon: {
+				DisplayName: Musket Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/8D0000:musket] to fight for you!
+					[c/FFEC08:Critical Strike]: Shoots a shot dealing 50% more damage every fifth shot.
+					'''
+			}
+
+			OnyxBlasterSummon: {
+				DisplayName: Onyx Blaster Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/8B00A8:onyx blaster] to fight for you!
+					[c/8B00A8:Shadowstorm]: Shoots four additional onyx projectiles every fifth shot.
+					'''
+			}
+
+			SnowballCannonSummon: {
+				DisplayName: Snowball Cannon Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/2AF34D:snowball cannon] to fight for you!
+					[c/78D8FF:Blizzard]: Shoots additional snowballs with every third shot.
+					'''
+			}
+
+			UndertakerSummon: {
+				DisplayName: Undertaker Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/FF5444:undertaker] to fight for you!
+					[c/B0B0B0:Multishot]: Shoots additional bullets after every fifth shot.
+					'''
+			}
+
+			GrenadeSummon: {
+				DisplayName: Grenade Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/FF5444:grenade] to fight for you!
+					Consumes grenades (50% chance)
+					[c/FF52D6:Bouncy Funtime]: Shoots a bouncy grenade every fifth throw.
+					'''
+			}
+
+			ShurikenSummon: {
+				DisplayName: Shuriken Summon
+				Tooltip:
+					'''
+					Summons an enchanted [c/FF5444:shuriken] to fight for you!
+					Consumes shurikens (35% chance to not consume)
+					[c/FF0000:Relentless Fury]: Increases attack speed every five shots (maximum of 5 stacks)
+					'''
+			}
+		}
+
+		Projectiles: {
+			CursedFlamesProjectile.DisplayName: Cursed Flames Projectile
+			FairyQueenProjectile.DisplayName: Fairy Queen Projectile
+			AdamantiteRepeaterSummonProjectile.DisplayName: Adamantite Repeater Summon Projectile
+			AerialBaneSummonProjectile.DisplayName: Aerial Bane Summon Projectile
+			BeeBowSummonProjectile.DisplayName: Bee Bow Summon Projectile
+			BorealBowSummonProjectile.DisplayName: Boreal Bow Summon Projectile
+			CobaltRepeaterSummonProjectile.DisplayName: Cobalt Repeater Summon Projectile
+			DaedalusSummonProjectile.DisplayName: Daedalus Summon Projectile
+			DemonBowSummonProjectile.DisplayName: Demon Bow Summon Projectile
+			GoldBowSummonProjectile.DisplayName: Gold Bow Summon Projectile
+			HallowedRepeaterSummonProjectile.DisplayName: Hallowed Repeater Summon Projectile
+			IceBowSummonProjectile.DisplayName: Ice Bow Summon Projectile
+			MarrowSummonProjectile.DisplayName: Marrow Summon Projectile
+			MoltenFurySummonProjectile.DisplayName: Molten Fury Summon Projectile
+			MythrilRepeaterSummonProjectile.DisplayName: Mythril Repeater Summon Projectile
+			OrichalcumRepeaterSummonProjectile.DisplayName: Orichalcum Repeater Summon Projectile
+			PalladiumRepeaterSummonProjectile.DisplayName: Palladium Repeater Summon Projectile
+			PhantomPhoenixSummonProjectile.DisplayName: Phantom Phoenix Summon Projectile
+			PlatinumBowSummonProjectile.DisplayName: Platinum Bow Summon Projectile
+			PulseBowSummonProjectile.DisplayName: Pulse Bow Summon Projectile
+			ShadowflameBowSummonProjectile.DisplayName: Shadowflame Bow Summon Projectile
+			TendonBowSummonProjectile.DisplayName: Tendon Bow Summon Projectile
+			TestProjectile.DisplayName: Test Projectile
+			TitaniumRepeaterSummonProjectile.DisplayName: Titanium Repeater Summon Projectile
+			WoodenBowSummonProjectile.DisplayName: Wooden Bow Summon Projectile
+			BlowpipeSummonProjectile.DisplayName: Blowpipe Summon Projectile
+			BoomstickSummonProjectile.DisplayName: Boomstick Summon Projectile
+			ClockworkAssaultRifleSummonProjectile.DisplayName: Clockwork Assault Rifle Summon Projectile
+			CoinGunSummonProjectile.DisplayName: Coin Gun Summon Projectile
+			FlamethrowerSummonProjectile.DisplayName: Flamethrower Summon Projectile
+			FlintlockPistolSummonProjectile.DisplayName: Flintlock Pistol Summon Projectile
+			MegasharkSummonProjectile.DisplayName: Megashark Summon Projectile
+			MinisharkSummonProjectile.DisplayName: Minishark Summon Projectile
+			MusketSummonProjectile.DisplayName: Musket Summon Projectile
+			OnyxBlasterSummonProjectile.DisplayName: Onyx Blaster Summon Projectile
+			SnowballCannonSummonProjectile.DisplayName: Snowball Cannon Summon Projectile
+			UndertakerSummonProjectile.DisplayName: Undertaker Summon Projectile
+			GrenadeSummonProjectile.DisplayName: Grenade Summon Projectile
+			ShurikenSummonProjectile.DisplayName: Shuriken Summon Projectile
+		}
+	}
+}

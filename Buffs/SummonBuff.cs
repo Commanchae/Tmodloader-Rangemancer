@@ -2,6 +2,8 @@
 using Terraria;
 using Bowmancer.Projectiles;
 using Ionic.Zip;
+using Bowmancer.Buffs.MiscBuffs;
+using Bowmancer.Players;
 
 namespace Bowmancer.Buffs
 {
@@ -11,7 +13,7 @@ namespace Bowmancer.Buffs
         protected string name;
         protected string description;
         protected int projectile;
-
+        protected Player owner = null;
         public override void SetStaticDefaults()
         {
             setAttributes();
@@ -33,6 +35,11 @@ namespace Bowmancer.Buffs
         public override void Update(Player player, ref int buffIndex)
         {
             // If the minions exist reset the buff time, otherwise remove the buff from the player
+            if (owner is null)
+            {
+                owner = player;
+            }
+
             if (player.ownedProjectileCounts[this.projectile] > 0)
             {
                 player.buffTime[buffIndex] = 18000;
@@ -42,6 +49,13 @@ namespace Bowmancer.Buffs
                 player.DelBuff(buffIndex);
                 buffIndex--;
             }
+
+
+        }
+
+        public override bool RightClick(int buffIndex)
+        {
+            return true;
         }
     }
 }

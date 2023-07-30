@@ -1,9 +1,8 @@
 [Currently starting to develop hardmode weapons.]
-Latest additions:
-- Enchanted flamethrower (Ability: Cursed Flamethrower)
-- Enchanted Pulse Bow (Ability: Faulty Conversion)
-- Enchanted Aerial Bane (Ability: Justice from Above)
-- Enchanted Phantom Phoenix (Ability: Fiery Flock)
+[ Development is going to take awhile as I'm currently really busy, sorry :( ]
+Latest: v1.6.0.0:
+- Added Venus Magnum, Sniper Rifle, Chain Gun Summon
+- Added ammo conservation technique buff (The more summons you have, the higher chance of conserving ammo (additional))!
 
 [h2] Description [/h2]
 
@@ -101,6 +100,10 @@ Code modified/inspired from (much thanks!):
 Sprites used are either directly from or a modified version of the official Terraria sprites.
 
 [h2] Updates [/h2]
+v1.6.0.0:
+- Added Venus Magnum, Sniper Rifle, Chain Gun Summon
+- Added ammo conservation technique buff!
+
 v1.5.0.0:
 - Added phantom phoenix summon, pulse bow, aerial bane, and flamethrower summon.
 

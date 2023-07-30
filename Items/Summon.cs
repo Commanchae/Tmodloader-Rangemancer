@@ -6,6 +6,8 @@ using Terraria.DataStructures;
 using Bowmancer.Buffs;
 using Bowmancer.Projectiles;
 using System;
+using Bowmancer.Players;
+using static Humanizer.In;
 
 namespace Bowmancer.Items
 {
@@ -83,7 +85,7 @@ namespace Bowmancer.Items
         {
             // This is needed so the buff that keeps your minion alive and allows you to despawn it properly applies
             player.AddBuff(Item.buffType, 2);
-
+            player.GetModPlayer<AmmoSavingModPlayer>().summonedWeapons += 1;
             // Minions have to be spawned manually, then have originalDamage assigned to the damage of the summon item
             var projectile = Projectile.NewProjectileDirect(source, position, velocity, type, damage, knockback, Main.myPlayer);
             for (int i = 0; i < 10; i++)

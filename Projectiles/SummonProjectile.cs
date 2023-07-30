@@ -16,6 +16,9 @@ using System.IO;
 using Bowmancer.Items.Bows;
 using System.Runtime.InteropServices;
 using System.Net.WebSockets;
+using Bowmancer.Players;
+using Bowmancer.Buffs.MiscBuffs;
+using static Humanizer.In;
 
 namespace Bowmancer.Projectiles
 {
@@ -40,6 +43,7 @@ namespace Bowmancer.Projectiles
         protected bool shootFromCenter = false; // true for bows, shoots from the strings instead of the chamber.
         protected Terraria.Audio.SoundStyle shootSound = SoundID.Item11;
         protected Terraria.Audio.SoundStyle specialSound = SoundID.Item31;
+        protected bool isWeaponSummon = true;
 
 
         protected Vector2 targetLocation = Vector2.Zero;
@@ -100,6 +104,11 @@ namespace Bowmancer.Projectiles
             if (!CheckActive(owner))
             {
                 return;
+            }
+
+            if (owner.GetModPlayer<AmmoSavingModPlayer>().summonedWeapons > 1)
+            {
+                owner.AddBuff(ModContent.BuffType<AmmoSavingBuff>(), 1);
             }
 
             GeneralBehavior(owner, out Vector2 vectorToIdlePosition, out float distanceToIdlePosition);
@@ -534,6 +543,7 @@ namespace Bowmancer.Projectiles
 
         protected void consumeAmmo(int ammoType)
         {
+            AmmoSavingModPlayer owner = Main.player[Projectile.owner].GetModPlayer<AmmoSavingModPlayer>();
             if (consumeAmmoItem)
             {
                 int number = rand.Next(1, 101);
@@ -541,7 +551,7 @@ namespace Bowmancer.Projectiles
                 // Implement ammo conservation. 
 
 
-                if (number >= (int)101 * percentNonConsume)
+                if (number >= (int)101 * (percentNonConsume + (owner.summonedWeapons * 0.025f)))
                 {
                     // weaponType: 0 for Bows, 1 for Guns.
                     if (ammoType != 3103 && ammoType != 3104)
@@ -551,5 +561,12 @@ namespace Bowmancer.Projectiles
                 }
             }
         }
+
+        public override void Kill(int timeLeft)
+        {
+            AmmoSavingModPlayer owner = Main.player[Projectile.owner].GetModPlayer<AmmoSavingModPlayer>();
+            owner.summonedWeapons -= 1;
+        }
+
     }
 }
