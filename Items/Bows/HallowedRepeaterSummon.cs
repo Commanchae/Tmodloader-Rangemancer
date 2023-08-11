@@ -18,7 +18,7 @@ namespace Bowmancer.Items.Bows
             name = "Enchanted Hallowed Repeater";
             damage = 48;
             knockBack = 2.5f;
-            mana = 70;
+            mana = 40;
             itemID = ItemID.HallowedRepeater;
 
 

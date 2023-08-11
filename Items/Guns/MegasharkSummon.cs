@@ -17,7 +17,7 @@ namespace Bowmancer.Items.Guns
             name = "Enchanted Megashark";
             damage = 25;
             knockBack = 1f;
-            mana = 75;
+            mana = 50;
             itemID = ItemID.Megashark;
 
             // Change

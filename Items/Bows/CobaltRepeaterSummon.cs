@@ -18,7 +18,7 @@ namespace Bowmancer.Items.Bows
             name = "Enchanted Cobalt Repeater";
             damage = 35;
             knockBack = 1.5f;
-            mana = 55;
+            mana = 40;
             itemID = ItemID.CobaltRepeater;
 
 

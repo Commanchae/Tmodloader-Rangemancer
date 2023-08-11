@@ -18,7 +18,7 @@ namespace Bowmancer.Items.Bows
             name = "Enchanted Titanium Repeater";
             damage = 42;
             knockBack = 2.5f;
-            mana = 65;
+            mana = 45;
             itemID = ItemID.TitaniumRepeater;
 
 

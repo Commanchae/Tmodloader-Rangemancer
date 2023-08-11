@@ -18,7 +18,7 @@ namespace Bowmancer.Items.Bows
             name = "Enchanted Orichalcum Repeater";
             damage = 40;
             knockBack = 2;
-            mana = 55;
+            mana = 40;
             itemID = ItemID.OrichalcumRepeater;
 
 

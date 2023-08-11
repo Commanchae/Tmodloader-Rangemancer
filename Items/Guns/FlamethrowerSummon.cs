@@ -17,7 +17,7 @@ namespace Bowmancer.Items.Guns
             name = "Enchanted Flamethrower";
             damage = (int) (35 * 0.75f);
             knockBack = 0.3f;
-            mana = 75;
+            mana = 50;
             itemID = ItemID.Flamethrower;
 
             // Change

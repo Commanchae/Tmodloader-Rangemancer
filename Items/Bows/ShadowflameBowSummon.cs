@@ -17,7 +17,7 @@ namespace Bowmancer.Items.Bows
             name = "Enchanted Shadowflame Bow";
             damage = 42;
             knockBack = 4.5f;
-            mana = 70;
+            mana = 40;
             itemID = ItemID.ShadowFlameBow;
 
             itemDescription = "Summons an enchanted [c/bb00ff:shadowflame bow] to fight for you!";

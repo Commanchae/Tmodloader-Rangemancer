@@ -17,7 +17,7 @@ namespace Bowmancer.Items.Bows
             name = "Enchanted Marrow";
             damage = 48;
             knockBack = 4.7f;
-            mana = 70;
+            mana = 40;
             itemID = ItemID.Marrow;
 
             itemDescription = "Summons an enchanted [c/bfbfbf:marrow] to fight for you!";

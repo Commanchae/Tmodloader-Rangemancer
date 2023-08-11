@@ -1,8 +1,9 @@
 [Currently starting to develop hardmode weapons.]
-[ Development is going to take awhile as I'm currently really busy, sorry :( ]
-Latest: v1.6.0.0:
-- Added Venus Magnum, Sniper Rifle, Chain Gun Summon
-- Added ammo conservation technique buff (The more summons you have, the higher chance of conserving ammo (additional))!
+[Development is going to take awhile as I'm currently really busy, sorry :(]
+Latest: v1.7.0.0:
+- Added Chlorophyte Shotbow, Phantasm, and Vortex Beater Summons!
+- Reduced mana costs for hardmode weapons.
+- Slight damage nerf to the Undertaker
 
 [h2] Description [/h2]
 
@@ -19,8 +20,6 @@ With Rangemancer, you have the ability to convert certain ranged weapons to thei
 3. Holding the respective summon item will allow that ranged weapon to use its special ability after a specific number of shots.
 4. Damage penalty for subsequent summons of the same item (Thanks Hiya Papaya!). Ex. If you summon 1 wooden bow and 1 platinum bow, they will both have 100% of their original damage. But if you summon 2 wooden bows, the first one will have 100% of their original damage, the second would have 95%. Each subsequent summon would be 95% of the previous summon.
 
-
-There are currently 36 weapons available:
 
 [h2] Available Weapons [/h2]
 [h3] Pre-hardmode [/h3]
@@ -57,13 +56,15 @@ There are currently 36 weapons available:
 - Enchanted Titanium Repeater
 - Enchanted Adamantite Repeater
 - Enchanted Hallowed Repeater
+- Enchanted Chlorophyte Shotbow
+- Enchanted Tsunami
 - Enchanted Ice Bow
 - Enchanted Marrow
 - Enchanted Shadowflame Bow
 - Enchanted Pulse Bow
 - Enchanted Phantom Phoenix
 - Enchanted Aerial Bane
-
+- Enchanted Phantasm
 
 [b] Guns [/b]
 - Enchanted Clockwork Assault Rifle (1 x Clockwork Assault Rifle + 3 x Fallen Star @ Workbench)
@@ -71,6 +72,10 @@ There are currently 36 weapons available:
 - Enchanted Megashark
 - Enchanted Coin Gun
 - Enchanted Flamethrower
+- Enchanted Venus Magnum
+- Enchanted Chain Gun
+- Enchanted Vortex Beater
+
 
 [h2] Notes [/h2]
 1. This mod is a simply a passion project. I'll only work on it when I can.

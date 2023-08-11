@@ -15,7 +15,7 @@ namespace Bowmancer.Items.Guns
             buff = ModContent.BuffType<UndertakerSummonBuff>();
             projectile = ModContent.ProjectileType<UndertakerSummonProjectile>();
             name = "Enchanted Undertaker";
-            damage = 18;
+            damage = (int) (18 * 0.75f);
             knockBack = 2f;
             mana = 15;
             itemID = ItemID.TheUndertaker;

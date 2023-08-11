@@ -17,7 +17,7 @@ namespace Bowmancer.Items.Bows
             name = "Enchanted Pulse Bow";
             damage = (int) (80*0.75);
             knockBack = 4.5f;
-            mana = 55;
+            mana = 40;
             itemID = ItemID.PulseBow;
 
             itemDescription = "Summons an enchanted [c/99ceff:pulse bow] to fight for you!";

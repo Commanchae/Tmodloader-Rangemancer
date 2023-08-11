@@ -17,7 +17,7 @@ namespace Bowmancer.Items.Guns
             name = "Enchanted Venus Magnum";
             damage = (int) (50 * 0.75f);
             knockBack = 5.5f;
-            mana = 70;
+            mana = 50;
             itemID = ItemID.VenusMagnum;
 
             itemDescription = "Summons an enchanted [c/2fff05:venus magnum] to fight for you!";

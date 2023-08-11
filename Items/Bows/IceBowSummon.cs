@@ -17,7 +17,7 @@ namespace Bowmancer.Items.Bows
             name = "Enchanted Ice Bow";
             damage = 35;
             knockBack = 4.5f;
-            mana = 55;
+            mana = 40;
             itemID = ItemID.IceBow;
 
             itemDescription = "Summons an enchanted [c/8ab7ff:ice bow] to fight for you!";

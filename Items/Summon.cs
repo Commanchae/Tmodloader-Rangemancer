@@ -101,7 +101,7 @@ namespace Bowmancer.Items
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
         public override void AddRecipes()
         {
-            if (craftable)
+            if (craftable)  
             {
                 CreateRecipe()
                     .AddIngredient(itemID, 1)

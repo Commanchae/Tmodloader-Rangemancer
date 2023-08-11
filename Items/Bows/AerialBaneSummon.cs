@@ -18,7 +18,7 @@ namespace Bowmancer.Items.Bows
             name = "Enchanted Aerial Bane";
             damage = (int)(39 * 0.75);
             knockBack = 4.5f;
-            mana = 70;
+            mana = 40;
             itemID = ItemID.DD2BetsyBow;
 
 

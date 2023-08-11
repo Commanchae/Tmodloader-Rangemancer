@@ -18,7 +18,7 @@ namespace Bowmancer.Items.Bows
             name = "Enchanted Mythril Repeater";
             damage = 38;
             knockBack = 2;
-            mana = 55;
+            mana = 40;
             itemID = ItemID.MythrilRepeater;
 
 
